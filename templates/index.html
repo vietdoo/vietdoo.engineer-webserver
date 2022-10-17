@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <meta charset="UTF-8">
+    <title>AI Server</title>
+    <link rel="apple-touch-icon" href="https://vietdoo.ml/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="https://vietdoo.ml/favicon-32x32.png " sizes="32x32" type="image/png">
+	<link rel="icon" href="https://vietdoo.ml/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="icon" href="https://vietdoo.ml/favicon.ico">
+</head>
+<body>
+<div class="page-img">
+    <img src="/static/home.jpg" class="img-fluid" alt="">
+</div>
+    <!-- Canvas -->
+<canvas class="orb-canvas"></canvas>
+<!-- Overlay -->
+<div class="overlay">
+        <div class="text-container">
+            <div class = "container">
+                <div class = "starter-template">
+                    <h1>Object Detection Version 1.0.1</h1>
+                </br>
+                    <p><a href="https://arxiv.org/abs/2209.02976" target="blank"> YoloV6</a> | Flask, Torch </p>
+                    <p>Intel(R) Xeon(R) CPU @ 2.80GHz</p>
+                    <p>Memory: 4 GB</p>
+                    <p> Maximum size: 10 MB </p>
+                    <p id="logo">By
+                    <a href="https://vietdoo.me">vietdoo</a> - October, 2022
+                    </p>
+                </br>
+                </div>
+            </div>
+           
+            <div>
+                <header class="navbar">
+                    <form action="/upload" method="post" enctype="multipart/form-data" >
+                        <div class="upload-btn border-btn">
+                            <label class="upload-btn">
+                                Upload & Detect <input type="file" name="image" style="display: none;" onchange="form.submit()">
+                            </label>              
+                        </div>
+                    </form>
+                </header>
+            </div>
+        </div>
+        
+        <div class="img-container">
+            {% if init %}
+                {% if face_detected %}
+                    <div class="alert-success">
+                Phát hiện <strong>{{ num_faces }}</strong> khuôn mặt!
+                    </div>
+                    {% if image_to_show %}
+                        <div>
+                            <img class="img-section" src="{{ image_to_show }}">
+                        </div>
+                    {% endif %}
+                {% else %}
+                    <div class="alert-danger">
+                <strong>Nope!</strong> Không phát hiện
+                    </div>
+                {% endif %}
+            {% endif %}
+
+        </div>
+</div>
+<script src="main.js"></script>
+</body>
+
+
+
+</html>
