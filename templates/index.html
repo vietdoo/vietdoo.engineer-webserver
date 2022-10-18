@@ -25,6 +25,7 @@
                 <div class = "starter-template">
                     <h1>Object Detection Version 1.0.2</h1>
                 </br>
+                     <div class = "des-template">
                     <p>Nhận dạng 80 loại vật thể</p>
                     <p><a href="https://arxiv.org/abs/2209.02976" target="blank"> YoloV6</a> | Flask, Torch </p>
                     <p>Intel(R) Xeon(R) CPU @ 2.90GHz</p>
@@ -33,6 +34,7 @@
                     <p id="logo">By
                     <a href="https://vietdoo.me">vietdoo</a> - October, 2022
                     </p>
+                    </div>
                 </br>
                 </div>
             </div>
@@ -57,18 +59,18 @@
         
         <div class="img-container">
             {% if init %}
+            <div>
+                <img class="img-section" src="{{ image_to_show }}">
+            </div>
+
                 {% if face_detected %}
-                    <div class="alert-success">
-                Phát hiện <strong>{{ num_faces }}</strong> khuôn mặt!
-                    </div>
-                    {% if image_to_show %}
-                        <div>
-                            <img class="img-section" src="{{ image_to_show }}">
-                        </div>
-                    {% endif %}
+                    <div class="alert-new">
+                        Phát hiện <strong>{{ num_faces }}</strong>
+                    </div>    
+
                 {% else %}
                     <div class="alert-danger">
-                <strong>Nope!</strong> Không phát hiện
+                        <strong>Nope!</strong> Không phát hiện
                     </div>
                 {% endif %}
             {% endif %}

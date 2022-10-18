@@ -319,3 +319,11 @@ h1 {
   font-size: 0.9rem;
   text-size-adjust: 10px;
 }
+
+.des-template {
+  font-size: 1.1rem;
+}
+
+.alert-new {
+   font-size: 1rem;
+}
