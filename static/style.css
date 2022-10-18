@@ -314,3 +314,8 @@ h1 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+.upload_hint {
+  font-size: 0.9rem;
+  text-size-adjust: 10px;
+}
