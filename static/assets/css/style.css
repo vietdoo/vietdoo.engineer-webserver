@@ -2952,8 +2952,8 @@ h2.project_heading:after {
     cursor: pointer;
     float: right;
     position: fixed;
-    right: 40px;
-    top: 40px;
+    right: 10px;
+    top: 20px;
     z-index: 110;
 }
 .port_togglebox span {

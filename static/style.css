@@ -122,11 +122,11 @@ strong {
 
   }
   
-  .alert-success {
-    color: #ffffff;
+  .alert-new {
+    color: #000000;
     max-width: 500px;
     margin: 10px calc((100% - 500px)/2);
-    display: none;
+  
   }
   
   .alert-danger {
@@ -277,6 +277,10 @@ strong {
      margin-left: 30px;
      margin-right: 20px;
      font-size: 20px;
+  }
+
+  .phone-zip{
+    display: none;
   }
 }
 
