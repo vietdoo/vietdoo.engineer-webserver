@@ -1,7 +1,9 @@
 # pip install -r requirements.txt
 # python3.8 environment
 
-torch>=1.8.0
+flask
+gunicorn
+torch>=1.8.0 --no-cache-dir
 torchvision>=0.9.0
 numpy>=1.18.5
 opencv-python>=4.1.2
