@@ -8,7 +8,7 @@ __pycache__/
 
 # Distribution / packaging
 
-images/
+.images/
 .Python
 videos/
 build/
