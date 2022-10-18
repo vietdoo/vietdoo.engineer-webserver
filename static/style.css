@@ -103,7 +103,7 @@ strong {
   .overlay {
     width: 120%;
     max-width: 1140px;
-    max-height: 640px;
+    max-height: 680px;
     padding: 5rem 8rem;
     display: flex;
     align-items: center;
@@ -215,13 +215,15 @@ strong {
   }
 
   .upload-btn {
-    padding: 0rem 2rem;
-    width: 120%;
-    
+ 
+     margin-left: 2rem;
+     margin-right: 2rem;
+     font-size: 23px;
   }
 
 }
 
+/* PHONE */ 
 @media (max-width: 740px) {
   .overlay {
     width: 100%;
@@ -234,7 +236,8 @@ strong {
     box-shadow: 0 0.75rem 2rem 0 rgba(0, 0, 0, 0.1);
     border-radius: 2rem;
     border: 1px solid rgba(255, 255, 255, 0.125);
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+   
   }
 
   .img-container {
@@ -261,10 +264,6 @@ strong {
     flex: 1;
   }
   
-  .overlay > div {
-    
-    
-  }
   
   .img-section {
       width: 100%;
@@ -274,8 +273,9 @@ strong {
   }
 
   .upload-btn {
-     padding: 0.15rem 0rem;
-     width: 20rem;
+ 
+     margin-left: 30px;
+     margin-right: 20px;
      font-size: 20px;
   }
 }
@@ -296,7 +296,7 @@ h1 {
 }
 
 .alert-new {
-   font-size: 1rem;
+   font-size: 1.2rem;
 }
 
 .page-img {
