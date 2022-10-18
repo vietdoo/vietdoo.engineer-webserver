@@ -6,6 +6,7 @@ import os, requests, torch, math, cv2
 import numpy as np
 import PIL
 from datetime import datetime, timedelta
+from collections import Counter
 
 #Change directory so that imports wortk correctly
 if os.getcwd()=="/content":
@@ -103,11 +104,17 @@ def run_model(image):
   det = non_max_suppression(pred_results, conf_thres, iou_thres, classes, agnostic_nms, max_det=max_det)[0]
   gn = torch.tensor(img_src.shape)[[1, 0, 1, 0]]  
   img_ori = img_src.copy()
+  l = []
   if len(det):
     det[:, :4] = Inferer.rescale(img.shape[2:], det[:, :4], img_src.shape).round()
     for *xyxy, conf, cls in reversed(det):
         class_num = int(cls)
+        l.append(class_names[class_num])
         label = None if hide_labels else (class_names[class_num] if hide_conf else f'{class_names[class_num]} {conf:.2f}')
         Inferer.plot_box_and_label(img_ori, max(round(sum(img_ori.shape) / 2 * 0.003), 2), xyxy, label, color=Inferer.generate_colors(class_num, True))
-  
-  return img_ori
+  C =  Counter(l)
+  S = ""
+  for cc in C:
+      S = S + str(C[cc]) + ' ' + cc + ', '
+  S = S[:-2]
+  return img_ori, S
