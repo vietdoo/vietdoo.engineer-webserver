@@ -25,7 +25,7 @@
                 <div class = "starter-template">
                     <h1>Object Detection Version 1.0.2</h1>
                 </br>
-                    <p>Nhận dạng vật thể</p>
+                    <p>Nhận dạng 80 loại vật thể</p>
                     <p><a href="https://arxiv.org/abs/2209.02976" target="blank"> YoloV6</a> | Flask, Torch </p>
                     <p>Intel(R) Xeon(R) CPU @ 2.90GHz</p>
                     <p>Memory: 4 GB</p>
@@ -39,14 +39,19 @@
            
             <div>
                 <header class="navbar">
-                    <form action="/upload" method="post" enctype="multipart/form-data" >
+                    <form action="/upload" method="post" enctype="multipart/form-data" id='form'>
                         <div class="upload-btn border-btn">
+                            
                             <label class="upload-btn">
-                                Upload & Detect <input type="file" name="image" style="display: none;" onchange="form.submit()">
+                                Upload & Detect <input id="fileinput" type="file" name="image" style="display: none;" onchange="waitok();">
                             </label>              
                         </div>
                     </form>
                 </header>
+
+                <div class='upload_hint' id='upload_hint'>
+                    Các định dạng được hỗ trợ: PNG, JPG và JPEG.
+                </div>
             </div>
         </div>
         
@@ -71,7 +76,16 @@
         </div>
 </div>
 <script src="main.js"></script>
+<script>
+    function waitok() {
+    form.submit();
+    document.querySelector("#upload_hint").innerHTML = 'Đang tải file lên server...';
+    document.getElementById("upload_hint").style.color="red";
+    //document.getElementById("upload_hint").style.backgroundColor = "red";
+}   
+</script>
 </body>
+
 
 
 
