@@ -34,9 +34,7 @@ img {
   color: #000;
 }
 
-.page-img {
-  display: none;
-}
+
 
 body {
   max-width: 1920px;
@@ -51,17 +49,7 @@ body {
   */
 }
 
-.makeby a {
-    color: rgb(30, 202, 188);
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 16px;
-    text-decoration: none;
-}
 
-.mango {
-    margin-left: 6px;
-    width: 2.2%;
-}
 
 .orb-canvas {
   position: fixed;
@@ -113,10 +101,10 @@ strong {
 
 @media (min-width: 1200px) {
   .overlay {
-    width: 100%;
+    width: 120%;
     max-width: 1140px;
     max-height: 640px;
-    padding: 8rem 6rem;
+    padding: 5rem 8rem;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -166,17 +154,10 @@ strong {
       box-shadow: 0 0.75rem 2rem 0 rgba(0, 0, 0, 0.1);
   }
 
-  .makeby {
-    margin-top: 5px;
-    margin-bottom: 5px;
-    text-align: center;
-    display: block;
-    position: fixed;
-    bottom: 50px;
-}
 
 .border-btn {
-  width: 80%;
+  padding: 1rem 2rem;
+  width: 120%;
 }
 }
 
@@ -222,7 +203,6 @@ strong {
   }
   
   .overlay > div {
-    line-height: 40px;
     font-size: 20px;
   }
   
@@ -235,15 +215,11 @@ strong {
   }
 
   .upload-btn {
-    margin-bottom: 40px;
+    padding: 0rem 2rem;
+    width: 120%;
+    
   }
 
-  .makeby {
-    margin-top: 5px;
-    margin-bottom: 5px;
-    text-align: center;
-    display: block;
-  }
 }
 
 @media (max-width: 740px) {
@@ -286,8 +262,8 @@ strong {
   }
   
   .overlay > div {
-    line-height: 40px;
-    font-size: 15px;
+    
+    
   }
   
   .img-section {
@@ -298,15 +274,10 @@ strong {
   }
 
   .upload-btn {
-    margin-bottom: 40px;
+     padding: 0.15rem 0rem;
+     width: 20rem;
+     font-size: 20px;
   }
-
-  .makeby {
-    margin-top: 5px;
-    margin-bottom: 5px;
-    text-align: center;
-    display: block;
-}
 }
 
 h1 {
@@ -326,4 +297,8 @@ h1 {
 
 .alert-new {
    font-size: 1rem;
+}
+
+.page-img {
+  display: none;
 }
