@@ -5,12 +5,21 @@ import PIL
 from flask import Flask,jsonify,request,render_template,send_from_directory
 from source.utils import draw_rectangles, read_image, prepare_image
 from model import *
+from flask_cors import CORS, cross_origin
+
+import pymongo
 
 os.environ['CUDA_VISIBLE_DEVICES'] = "0"
 app = Flask(__name__, static_folder='static',)
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 app.jinja_env.auto_reload = True
 app.config['TEMPLATES_AUTO_RELOAD'] = True
 app.config['UPLOAD_FOLDER'] = os.path.basename('uploads')
+
+myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+mydb = myclient["bigdata"]
+chotot_lite = mydb["chotot_lite"]
 
 @app.route('/')
 def home():
@@ -33,5 +42,22 @@ def upload():
     
     return render_template('index.html', face_detected=len(text)>0, num_faces=text, image_to_show=to_send, init=True)
 
+@app.route('/api/v1.0/houses/', methods=['GET'])
+def get_mongo():
+    
+    dist = request.args.get('dist')
+    print(dist)
+    
+    myquery = {}
+    if (dist):
+
+    	myquery = { "dist": dist }
+    query_cursor = chotot_lite.find(myquery, {'_id': False})
+    
+    return list(query_cursor)
+
+
 if __name__ == '__main__':
     app.run(host = '0.0.0.0')
+
+    
