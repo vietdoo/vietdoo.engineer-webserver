@@ -7,7 +7,11 @@ __pycache__/
 # C extensions
 
 # Distribution / packaging
+<<<<<<< HEAD
 *.json
+=======
+
+>>>>>>> origin/main
 warehouse/
 .Python
 videos/

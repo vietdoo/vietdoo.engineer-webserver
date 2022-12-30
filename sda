@@ -1,0 +1,114 @@
+[33mcommit 14a24cf913a7a943a8677435df59d67b3a39cac6[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: vietdoo <dodoviet@icloud.com>
+Date:   Fri Dec 30 23:10:25 2022 +0700
+
+    update feature
+
+[33mcommit fb9df9929055dcfdc67aa52e32c537ba1ac98188[m
+Author: vietdoo <dodoviet@icloud.com>
+Date:   Wed Oct 19 10:44:27 2022 +0700
+
+    drop height html
+
+[33mcommit 5febf2390a3d74fdbc01b62ce5d6053e7fa76adc[m
+Author: vietdoo <dodoviet@icloud.com>
+Date:   Tue Oct 18 22:32:18 2022 +0700
+
+    social scroll
+
+[33mcommit 7dce7353e381907aefd55ff883d1a942c918cc9b[m
+Author: vietdoo <dodoviet@icloud.com>
+Date:   Tue Oct 18 22:26:00 2022 +0700
+
+    fixed port_togglebox
+
+[33mcommit 1c35c2ad4e7c0698248d037e051b493327bb08e7[m
+Author: vietdoo <dodoviet@icloud.com>
+Date:   Tue Oct 18 22:16:10 2022 +0700
+
+    fixed phone responsive
+
+[33mcommit 1e43c3a91225ffc2d49b5b9b7cce444079cdb6f1[m
+Author: vietdoo <dodoviet@icloud.com>
+Date:   Tue Oct 18 22:14:59 2022 +0700
+
+    fixed phone responsive
+
+[33mcommit bdd2208ba0ab8d32e560da1583ae43373d80bc6b[m
+Author: vietdoo <dodoviet@icloud.com>
+Date:   Tue Oct 18 20:53:19 2022 +0700
+
+    New UI
+
+[33mcommit 072930370c8d28cf01b77e076562815938fb56be[m
+Author: vietdoo <dodoviet@icloud.com>
+Date:   Tue Oct 18 20:31:49 2022 +0700
+
+    New UI
+
+[33mcommit 3159c3c3173c0404617b33f208f83f36cab09ca3[m
+Author: vietdoo <dodoviet@icloud.com>
+Date:   Tue Oct 18 14:15:30 2022 +0700
+
+    show text
+
+[33mcommit dbb88a33ce967b5993b479d4a768e4a7d65c9cd6[m
+Author: vietdoo <dodoviet@icloud.com>
+Date:   Tue Oct 18 13:37:52 2022 +0700
+
+    delay html
+
+[33mcommit fcf910bfb7d49424e63861661275af725a229a93[m
+Author: vietdoo <dodoviet@icloud.com>
+Date:   Tue Oct 18 13:37:06 2022 +0700
+
+    delay html
+
+[33mcommit 2809790b03359d2192981dab56ae4640c9139d4a[m
+Author: vietdoo <dodoviet@icloud.com>
+Date:   Tue Oct 18 13:07:38 2022 +0700
+
+    template
+
+[33mcommit 38ed45ba8de439f33edc1a670f43f25d409d7737[m
+Author: vietdoo <dodoviet@icloud.com>
+Date:   Tue Oct 18 13:02:28 2022 +0700
+
+    requirement
+
+[33mcommit d7ad1d0b58133316265783efaab69b64edf266bd[m
+Author: vietdoo <dodoviet@icloud.com>
+Date:   Tue Oct 18 13:01:17 2022 +0700
+
+    requirement
+
+[33mcommit 92c877b54ec523c34eaf2ae617d69a14f8f0fa6d[m
+Merge: bcbb1dd a4671dc
+Author: vietdoo <dodoviet@icloud.com>
+Date:   Tue Oct 18 12:30:40 2022 +0700
+
+    Merge branch 'main' of https://github.com/vietdoo/Object-Detection-Flask into main
+
+[33mcommit bcbb1dd2ac3a915744fa41cb31068aca494cb335[m
+Author: vietdoo <dodoviet@icloud.com>
+Date:   Tue Oct 18 12:30:25 2022 +0700
+
+    module
+
+[33mcommit a4671dc484ffd129648971e9d5479545e1844a27[m
+Author: Đỗ Quốc Việt <64247567+vietdoo@users.noreply.github.com>
+Date:   Tue Oct 18 00:16:44 2022 +0700
+
+    Delete haha.jpg
+
+[33mcommit a62dfd9e885ce4f0a9e68628804e7a48849d1d59[m
+Author: vietdoo <dodoviet@icloud.com>
+Date:   Tue Oct 18 00:12:47 2022 +0700
+
+    v 1.0.1
+
+[33mcommit 62a48408a04c375e0cce14101d64fdafa367e05c[m
+Author: Đỗ Quốc Việt <64247567+vietdoo@users.noreply.github.com>
+Date:   Mon Oct 17 11:46:28 2022 +0700
+
+    Initial commit
