@@ -69,3 +69,10 @@
 .infopane {
     margin-left: 20px;
 }
+
+/*
+=>> An homepage 
+*/
+.img-fluid {
+    display: none;
+}

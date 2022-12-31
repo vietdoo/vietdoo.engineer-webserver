@@ -1,18 +1,3 @@
-function getRandomArrayElements(arr, count) {
-    var shuffled = arr.slice(0), i = arr.length, min = i - count, temp, index;
-    while (i-- > min) {
-        index = Math.floor((i + 1) * Math.random());
-        temp = shuffled[index];
-        shuffled[index] = shuffled[i];
-        shuffled[i] = temp;
-    }
-    return shuffled.slice(min);
-}
-
-
-
-
-
 var tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 18,
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Points &copy 2012 LINZ'
@@ -20,23 +5,18 @@ var tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     latlng = L.latLng(10.773081, 106.6829); 
 
 var map = L.map('map', {center: latlng, zoom: 13, layers: [tiles]});
-
 var markers = L.markerClusterGroup({ chunkedLoading: true });
 
+function makePopup(house) {
+    var title = house['title'];
+    var price = house['price'];
+    var url = house['url']
+    var img = house['img'];
+    var imgStr = '<img src = "' + img +  '" style="width: 120px;" ></img>'
+    var imgLink = '<a href = "' + url + '">Chi tiết</a>'
 
-// var houses = getRandomArrayElements(addressPoints, 8000);
-
-// async function load() {
-//     let url = 'http://localhost:1337/tutorials';
-//     let obj = await fetch(url).json()
-//     .then(text => {
-//         text; // => 'Page not found'
-//     });;
-//     console.log(obj);
-// }
-
-// load();
-
+    return title + '<h2>' + price + '</h2>' + imgStr + imgLink
+}
 
 async function getJSON(dist) {
     return fetch('https://vietdoo.engineer/api/v1.0/houses/?dist=' + dist)
@@ -45,29 +25,29 @@ async function getJSON(dist) {
 }
 
 async function caller() {
+    var startTime = performance.now()
     const houses = await this.getJSON('Quận 5');  
-    console.log('number of houses: ',houses.length);
+    console.log("Successfully request: ", houses.length, " houses in ", houses[0]['dist']);
     for (var i = 0; i < houses.length; i++) {
         var lat = houses[i]['lat'];
         var long = houses[i]['long'];
         var title = houses[i]['title'];
-        var price = houses[i]['price'];
-        var img = houses[i]['img'];
-        var url = houses[i]['url']
-        var marker = L.marker(L.latLng(lat, long), { title: title});
-        var imgStr = '<img src = "' + img +  '" style="width: 100px;" ></img>'
-        var imgLink = '<a href = "' + url + '"  >Link bài viết</a>'
 
-        var popup = title + '<h2>' + price + '</h2>' + imgStr + imgLink
+        var marker = L.marker(L.latLng(lat, long), { title: title});
+
+        var popup = makePopup(houses[i]);
         marker.bindPopup(popup);
         markers.addLayer(marker);
     }
+    console.log("Done in ", performance.now() - startTime, " ms")
 }
 
 caller();
 
 async function resetLayer() {
     markers.clearLayers();
+
+    var startTime = performance.now()
 
     var radios = document.getElementsByName('district');
     var option = '';
@@ -76,25 +56,20 @@ async function resetLayer() {
             option = radios[i].value;
         }
     }
-
-    
     
     const houses = await this.getJSON(option);  
-    console.log(houses.length);
+    console.log("Successfully request: ", houses.length, " houses in ", houses[0]['dist']);
     for (var i = 0; i < houses.length; i++) {
         var lat = houses[i]['lat'];
         var long = houses[i]['long'];
-        var title = houses[i]['title'];
-        var price = houses[i]['price'];
-        var img = houses[i]['img'];
-        console.log(lat, long, title, price);
-        var marker = L.marker(L.latLng(lat, long), { title: title});
+        var title = houses['title'];
 
-        var imgStr = '<img src = "' + img +  '" style="width: 100px;" ></img>'
-        var popup = title + '<h2>' + price + '</h2>' + imgStr
+        var marker = L.marker(L.latLng(lat, long), { title: title});
+        var popup = makePopup(houses[i]);
         marker.bindPopup(popup);
         markers.addLayer(marker);
     }
+    console.log("Done in ", performance.now() - startTime, " ms")
 }
 
 map.addLayer(markers);
