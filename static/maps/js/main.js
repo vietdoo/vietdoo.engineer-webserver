@@ -6,7 +6,7 @@ var tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 var map = L.map('map', {center: latlng, zoom: 13, layers: [tiles]});
 var markers = L.markerClusterGroup({ chunkedLoading: true });
-
+map.attributionControl.setPrefix('Python Final Project 2022')
 function makePopup(house) {
     var title = house['title'];
     var price = house['price'];
