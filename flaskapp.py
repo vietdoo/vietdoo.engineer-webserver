@@ -21,6 +21,7 @@ app.config['UPLOAD_FOLDER'] = os.path.basename('uploads')
 myclient = pymongo.MongoClient("mongodb://localhost:27017/")
 mydb = myclient["bigdata"]
 chotot_lite = mydb["chotot_lite"]
+#chotot_lite = mydb["chotot_lite_fixed"]
 
 @app.route('/')
 def home():
@@ -47,9 +48,6 @@ def upload():
 def get_mongo():
  
     dist = request.args.get('dist')
-
-    
-
     low = request.args.get('low')
     high = request.args.get('high')
     
@@ -58,15 +56,13 @@ def get_mongo():
       high = 2**50
     
     print("Filter: ", low, high, dist)  
-
     myquery = {}
-    
-    
+
     
     if (dist):
       #myquery = {"price": {"$gt": low}}
       #myquery = {"$and":[ {"dist": dist}, {"price": {"$gt": low}}, {"price": {"$lt": high}}]}
-      myquery = {"$and":[ {"dist": 'Quận 4'}, {"price": {"$gt": int(low)}}, {"price": {"$lt": int(high)}}]}
+      myquery = {"$and":[ {"dist": dist}, {"price": {"$gt": int(low)}}, {"price": {"$lt": int(high)}}]}
      # myquery = { "dist": dist, "price": {"$gt": low}, "price": {"$gt": low}}
      # myquery = { "dist": dist}
     
