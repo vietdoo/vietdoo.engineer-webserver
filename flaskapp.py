@@ -45,17 +45,40 @@ def upload():
 
 @app.route('/api/v1.0/houses/', methods=['GET'])
 def get_mongo():
-    
+ 
     dist = request.args.get('dist')
-    print(dist)
-    
-    myquery = {}
-    if (dist):
 
-    	myquery = { "dist": dist }
-    query_cursor = chotot_lite.find(myquery, {'_id': False})
     
-    return list(query_cursor)
+
+    low = request.args.get('low')
+    high = request.args.get('high')
+    
+    if (not low or not high):
+      low = 0
+      high = 2**50
+    
+    print("Filter: ", low, high, dist)  
+
+    myquery = {}
+    
+    
+    
+    if (dist):
+      #myquery = {"price": {"$gt": low}}
+      #myquery = {"$and":[ {"dist": dist}, {"price": {"$gt": low}}, {"price": {"$lt": high}}]}
+      myquery = {"$and":[ {"dist": 'Quận 4'}, {"price": {"$gt": int(low)}}, {"price": {"$lt": int(high)}}]}
+     # myquery = { "dist": dist, "price": {"$gt": low}, "price": {"$gt": low}}
+     # myquery = { "dist": dist}
+    
+    
+    query_cursor = chotot_lite.find(myquery, {'_id': False})
+    ans =  list(query_cursor)
+    #info = {'avg_price': 10000000, 'list_len': len(ans)}
+    
+    #ans.append(info)
+    
+    return ans
+  
 @app.route('/maps')
 def maps():
   return render_template('maps.html')
