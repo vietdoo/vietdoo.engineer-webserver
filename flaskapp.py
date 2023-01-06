@@ -21,7 +21,7 @@ app.config['UPLOAD_FOLDER'] = os.path.basename('uploads')
 myclient = pymongo.MongoClient("mongodb://localhost:27017/")
 mydb = myclient["bigdata"]
 chotot_lite = mydb["chotot_lite"]
-#chotot_lite = mydb["chotot_lite_fixed"]
+chotot_lite = mydb["chotot_lite_fixed"]
 
 @app.route('/')
 def home():
