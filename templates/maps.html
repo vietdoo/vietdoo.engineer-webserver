@@ -3,119 +3,135 @@
 	<title>Ho Chi Minh Real Estate</title>
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" integrity="sha512-07I2e+7D8p6he1SIM+1twR5TIrhUQn9+I6yjqD53JQjFiMf8EtC93ty0/5vJTZGF8aAocvHYNEDJajGdNx1IsQ==" crossorigin="" />
 	<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet-src.js" integrity="sha512-WXoSHqw/t26DszhdMhOXOkI7qCiv5QWXhH9R7CgvgZMHz1ImlkVQ3uNsiQKu5wwbbxtPzFXd1hK4tzno2VqhpA==" crossorigin=""></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="../static/maps/assets/css/style.css" />
-
 	<link rel="stylesheet" href="../static/maps/leaflet/MarkerCluster.css" />
 	<link rel="stylesheet" href="../static/maps/leaflet/MarkerCluster.Default.css" />
 	<link rel="stylesheet" href="../static/maps/js/main.js" />
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<script src="../static/maps/leaflet/leaflet.markercluster-src.js"></script>
 	<link rel="shortcut icon" type="image/png" href="https://vietdoo.ml/favicon.ico">
-
-
-
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 	<div class="homepage-image">
 		<img src="./static/maps/assets/images/home.jpg" class="img-fluid">
 	</div>
-	<div id="map"></div>
-	<div id="filter-pane">
-		<div style="margin: 10px 0;">Filter pane</div>
-		<div class="radio-group">
-			<label for="gender">District: </label>
-			<div style="margin: 10px 0;">
-				<span class="radio-input">
-					<input type="radio" name="district" value="Quận 1" checked="checked">Quận 1</input>
-				</span>
-				<span class="radio-input">
-					<input type="radio" name="district" value="Quận 3">Quận 3</input>
-				</span>
-				<span class="radio-input">
-					<input type="radio" name="district" value="Quận 4">Quận 4</input>
-				</span>
-				<span class="radio-input">
-					<input type="radio" name="district" value="Quận 5">Quận 5</input>
-				</span>
-				<span class="radio-input">
-					<input type="radio" name="district" value="Quận 6">Quận 6</input>
-				</span>
-				<span class="radio-input">
-					<input type="radio" name="district" value="Quận 7">Quận 7</input>
-				</span>
-				<span class="radio-input">
-					<input type="radio" name="district" value="Quận 8">Quận 8</input>
-				</span>
-				<span class="radio-input">
-					<input type="radio" name="district" value="Quận 10">Quận 10</input>
-				</span>
-				<span class="radio-input">
-					<input type="radio" name="district" value="Quận 11">Quận 11</input>
-				</span>
-				<span class="radio-input">
-					<input type="radio" name="district" value="Thành phố Thủ Đức">TP Thủ Đức</input>
-				</span>
-				<span class="radio-input">
-					<input type="radio" name="district" value="Quận Tân Phú">Tân Phú</input>
-				</span>
-
-				<span class="radio-input">
-					<input type="radio" name="district" value="Quận Tân Bình">Tân Bình</input>
-				</span>
-
-				<span class="radio-input">
-					<input type="radio" name="district" value="Quận Bình Tân">Bình Tân</input>
-				</span>
-
-				<span class="radio-input">
-					<input type="radio" name="district" value="Quận Gò Vấp">Gò Vấp</input>
-				</span>
-
-				<span class="radio-input">
-					<input type="radio" name="district" value="Quận Bình Thạnh">Bình Thạnh</input>
-				</span>
-
-				<span class="radio-input">
-					<input type="radio" name="district" value="Quận Phú Nhuận">Phú Nhuận</input>
-				</span>
-
-				<span class="radio-input">
-					<input type="radio" name="district" value="Huyện Bình Chánh">Bình Chánh</input>
-				</span>
-
-				
-
-				<span class="radio-input">
-					<input type="radio" name="district" value="Huyện Cần Giờ">Cần Giờ</input>
-				</span>
-
-				<span class="radio-input">
-					<input type="radio" name="district" value="Huyện Củ Chi">Củ Chi</input>
-				</span>
-
-				<span class="radio-input">
-					<input type="radio" name="district" value="Huyện Nhà Bè">Nhà Bè</input>
-				</span>
+    <div id="main">
+		<div id="header">
+			<div id="navbar">
+				<div class="navbar-item">
+					<!-- <div class="nav-select" style="margin-left: 30px;">
+						Buy
+					</div>
+					<div class="nav-select" style="margin-left: 30px;">
+						Rent
+					</div>
+					<div class="nav-select" style="margin-left: 30px;">
+						Sell
+					</div> -->
+					<div>
+						<h2 style="margin: 10px; vertical-align: middle;">
+							vietdoo
+						</h2>
+					</div>
+				</div>
+				<div class="navbar-item2" style="margin: auto;">
+					<h2 style="color: rgb(0, 106, 255); margin: 10px; vertical-align: middle;">
+						Together we change the world
+					</h2>
+				</div>
+				<div class="navbar-item">
+					<!-- <div class="nav-select">
+						Advertise
+					</div>
+					<div class="nav-select" style="margin-left: 30px;">
+						Help
+					</div>
+					<div class="nav-select" style="margin-left: 30px;">
+						Sign in
+					</div> -->
+					<div>
+						<h2 style="margin: 10px; vertical-align: middle; text-align: right;">
+							dangtrinh
+						</h2>
+					</div>
+				</div>
+			</div>
+			<div id="filterbar">
+				<div class="filter-element">
+					<div class="district-section">
+						<select style="padding: 5px 15px;" name="cars" id="district">
+							<option value="Quận 1" checked="checked">Quận 1</option>
+							<option value="Quận 3">Quận 3</option>
+							<option value="Quận 4">Quận 4</option>
+							<option value="Quận 5">Quận 5</option>
+							<option value="Quận 6">Quận 6</option>
+							<option value="Quận 7">Quận 7</option>
+							<option value="Quận 8">Quận 8</option>
+							<option value="Quận 10">Quận 10</option>
+							<option value="Quận 11">Quận 11</option>
+							<option value="Thành phố Thủ Đức">TP Thủ Đức</option>
+							<option value="Quận Tân Phú">Tân Phú</option>
+							<option value="Quận Tân Bình">Tân Bình</option>
+							<option value="Quận Bình Tân">Bình Tân</option>
+							<option value="Quận Gò Vấp">Gò Vấp</option>
+							<option value="Quận Bình Thạnh">Bình Thạnh</option>
+							<option value="Quận Phú Nhuận">Phú Nhuận</option>
+							<option value="Huyện Bình Chánh">Bình Chánh</option>
+							<option value="Huyện Cần Giờ">Cần Giờ</option>		
+							<option value="Huyện Củ Chi">Củ Chi</option>
+							<option value="Huyện Nhà Bè">Nhà Bè</option>
+						</select>
+					</div>
+					<!-- <div style="width: 15%; float: left;">
+						<select style="padding: 5px 25px; margin: 0 20px;" name="cars" id="price">
+							<option value="1" checked="checked">&lt; 1 tỷ</option>
+							<option value="2">1 - 2 tỷ</option>
+							<option value="3">2 - 3 tỷ</option>
+							<option value="5">3 - 5 tỷ"</option>
+							<option value="7">5 - 7 tỷ</option>
+							<option value="10">7 - 10 tỷ</option>
+						</select>
+					</div> -->
+					<!-- <div class="slider-range-wrap">
+						<div id="slider-range"></div>
+						<span class="min-range">100</span>
+						<span class="max-range">1,000</span>
+					</div> -->
+					<div class="slider-range-wrap">
+						<div id="slider-range"></div>
+						<span id="min-range" class="min-range">100.000.000</span>
+						<span id="max-range" class="max-range">10.000.000.000</span>
+					</div>
+					<div class="button-section">
+						<!-- <label for="low">Min:</label>
+						<input style="padding: 5px 0;" type="text" id="lowInput" name="low" value="0">
+						<label for="high">Max:</label>
+						<input style="padding: 5px 0;" type="text" id="highInput" name="high" value="10000000000"> -->
+						<button style="padding: 10px 25px; background-color: rgb(0, 106, 255); color: white; border: none; border-radius: 5px; cursor: pointer;" onclick="resetLayer()">Select</button>
+					</div>
+				</div>
 			</div>
 		</div>
-		<div style="margin: 10px 0;">
-			<button onclick="resetLayer()">Select</button>
-		</div>
-	</div>
-	<!-- <div id="floating-content">
-		<span>Mouse over a cluster to see the bounds of its children and click a cluster to zoom to those bounds</span>
-	</div> -->
-	<div id="information-pane">
-		<div class="infopane">
-			<div style="margin: 20px 0;">Information pane</div>
-			<div>Diện tích: 100m2</div>
-			<div>Giá bán: 10k $</div>
-			<div>Mặt tiền: 2</div>
-			<div>Lộ giới: 5m</div>
-			<div>Sổ đỏ: có</div>
-			<div>Thương lượng: có</div>
+		<div id="content">
+			<div id="map">
+				
+			</div>
+			<div style="width: 60%; float: left;">Map</div>
+			<div id="sidebar">
+				<div style="margin: 20px;">
+					<h2 style="color: rgb(0, 106, 255);">Ho Chi Minh City Real Estate & Homes For Sale</h2>
+					<div id="quantity"></div>
+				</div>
+				<div id="house-container"></div>
+			</div>
 		</div>
 	</div>
 	<script type="text/javascript" src="../static/maps/js/main.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
 </body>
 </html>

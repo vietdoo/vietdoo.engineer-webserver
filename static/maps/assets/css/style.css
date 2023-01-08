@@ -1,13 +1,92 @@
+ 
  * {
     padding: 0;
     margin: 0;
 }
 
+html {
+    font-family: "Open Sans", "Adjusted Arial", Tahoma, Geneva, sans-serif;
+}
+
+#main {
+    width: 100vw;
+    height: 100vh;
+}
+
+#header {
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    background-color: #fff;
+    border-bottom: 1px solid #888;
+}
+
+#navbar {
+    height: 40%;
+    margin: auto 0;
+    border-bottom: 1px solid rgb(210, 209, 209);
+}
+
+#navbar .navbar-item {
+    width: 20%;
+    float: left;
+}
+
+#navbar .navbar-item2 {
+    width: 60%;
+    float: left;
+    text-align: center;
+}
+
+#navbar .nav-select {
+    float: left;
+    text-align: center;
+    align-items: center;
+    margin: 10px;
+    font-size: 18px;
+}
+
+#navbar .nav-select:hover {
+    cursor: pointer;
+    color: rgb(0, 106, 255);
+}
+
+#filterbar {
+    height: 60%;
+}
+
+#filterbar .filter-element {
+    width: 100%;
+    float: left;
+    margin: 10px 10px;
+}
+
+
+#content {
+    width: 100%;
+    height: 100%;
+}
+
+#content #house-container {
+    margin: 10px;
+}
+
+#content #house-container .house {
+    margin: 10px;
+}
+
 #map {
-	width: 100vw; 
-	height: 100vh;
-    padding: 0;
-    margin: 0;
+	width: 60%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+#sidebar {
+    width: 40%; 
+	height: 100%;
+    float: left;
 }
 
 #progress {
@@ -62,17 +141,257 @@
     border-radius: 5%;
 }
 
-.radio-input {
-    margin-right: 40px;
+#quantity {
+    margin-top: 20px;
 }
 
 .infopane {
     margin-left: 20px;
 }
 
-/*
-=>> An homepage 
-*/
 .img-fluid {
     display: none;
 }
+
+* {
+    box-sizing: border-box;
+  }
+  
+  .column1 {
+    float: left;
+    width: 100px;
+  }
+  
+  .column2 {
+    float: left;
+    width: 200px;
+    margin-left: 20px;
+  }
+
+  .row {
+    width: 400px;
+  }
+
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+ #dropdown {
+    display: block;
+    height: px;
+    border-radius: 5px;
+    margin: 20px 0;
+  }
+
+
+  /* slider */
+  .ui-widget-header {
+    height: 4px !important;
+    background: #53b147;
+  }
+  .ui-state-default,
+  .ui-widget-content .ui-state-default,
+  .ui-widget-header .ui-state-default {
+    border: 1px solid #c3c3c3;
+    border-radius: 13px;
+    background: #fff;
+  }
+  .ui-widget-content {
+      height: 2px !important;
+      border: 0;
+      background: #e0e0da;
+  }
+  .ui-slider-horizontal .ui-slider-range {
+    background-color: rgb(0, 106, 255);
+    top: -1px;
+  }
+  .ui-slider-horizontal .ui-slider-handle {
+    top: -10px;
+    cursor: pointer;
+  }
+  .ui-slider-handle {
+    outline: none;
+  }
+  /* .ui-slider-handle .amount {
+    position: absolute;
+    left: 0;
+    top: 35px;
+    display: none;
+    width: 130px;
+    padding: 10px 0;
+    text-align: center;
+    margin-left: -55px;
+    font-weight: normal;
+    font-size: 14px;
+    color: #fff;
+    border: 1px solid rgb(0, 106, 255);
+    background: rgb(0, 106, 255);
+  } */
+  .ui-slider-handle .amount:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -11px;
+    left: 50%;
+    right: 0;
+    width: 0;
+    height: 0;
+    margin-left: -5px;
+    border-bottom: 5px solid #53b147;
+    border-top: 5px solid transparent;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    background-color: #fff;
+  }
+  .min-range {
+    float: left;
+    margin-top: 10px;
+    padding: 10px 0;
+    font-size: 12px;
+    color: rgb(0, 0, 0);
+    border-radius: 10%;
+    font-weight: bold;
+  }
+  .max-range {
+    float: right;
+    padding-top: 20px;
+    font-size: 12px;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+  }
+  .slider-range-wrap {
+    position: relative;
+    height: 50px;
+    margin: 0 30px;
+    margin-top: 10px;
+  }
+
+  @media (max-width: 1000px) {
+    .house {
+        width: 95%;
+        height: 270px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; 
+        border-radius: 5px;
+    }
+    .district-section {
+        width: 15%; 
+        float: left;
+    }
+    .slider-range-wrap {
+        width: 40%; 
+        float: left;
+    }
+    .button-section {
+        width: 15%; 
+        float: left;
+    }
+    #district {
+        margin: 0 20px;
+    }
+    #header {
+        height: 15%;
+    }
+    #map {
+        height: 85%;
+    }
+    #sidebar {
+        margin-top: 15vh;
+    }
+  }
+
+  @media (max-width: 700px) {
+    #district {
+        margin: 0;
+    }
+    .slider-range-wrap {
+        margin-left: 80px;
+    }
+    #header {
+        height: 25vh;
+    }
+    #map {
+        height: 75vh;
+    }
+    #sidebar {
+        margin-top: 25vh;
+    }
+    .district-section {
+        width: 15%; 
+        float: left;
+    }
+    .slider-range-wrap {
+        width: 60%; 
+        float: left;
+    }
+    .button-section {
+        width: 25%; 
+        float: left;
+    }
+  }
+
+  @media (max-width: 470px) {
+    .slider-range-wrap {
+        margin-left: 0px;
+    }
+    #header {
+        height: 32vh;
+    }
+    #map {
+        height: 68vh;
+    }
+    #sidebar {
+        margin-top: 32vh;
+    }
+    .district-section {
+        width: 100%; 
+        float: left;
+        text-align: center;
+    }
+    .slider-range-wrap {
+        width: 80%; 
+        float: left;
+        margin-left: 30px;
+        margin-top: 20px;
+    }
+    .button-section {
+        width: 100%; 
+        float: left;
+        text-align: center;
+    }
+  }
+  
+  @media (min-width: 1001px) {
+    .house {
+        width: 45%;
+        height: 270px; 
+        float: left; 
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; 
+        border-radius: 5px;
+    }
+    .district-section {
+        width: 15%; 
+        float: left;
+    }
+    .slider-range-wrap {
+        width: 30%; 
+        float: left;
+    }
+    .button-section {
+        width: 15%; 
+        float: left;
+    }
+    #district {
+        margin: 0 20px;
+    }
+    #header {
+        height: 15%;
+    }
+    #map {
+        height: 85%;
+    }
+    #sidebar {
+        margin-top: 15vh;
+    }
+  }
