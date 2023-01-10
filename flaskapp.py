@@ -27,13 +27,6 @@ chotot_lite = mydb["chotot_lite_fixed"]
 def home():
   return render_template('index.html')
 
-# @app.route('/detect', methods=['POST'])
-# def detect():
-#     file = request.files['image']
-#     image = read_image(file)
-#     faces = run_model(image, model5)
-#     return jsonify(detections = faces)
-
 @app.route('/upload', methods=['POST'])
 def upload():
     file = request.files['image']
@@ -43,6 +36,14 @@ def upload():
     to_send = prepare_image(image)
     
     return render_template('index.html', face_detected=len(text)>0, num_faces=text, image_to_show=to_send, init=True)
+
+@app.route('/api/v1.0/content/', methods=['GET'])
+def get_html():
+    url = request.args.get('url')
+    print(url)
+    r = requests.get(url, headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'})
+
+    return r.content
 
 @app.route('/api/v1.0/houses/', methods=['GET'])
 def get_mongo():

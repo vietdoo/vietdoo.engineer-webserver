@@ -12,7 +12,7 @@ $(function() {
         values: [ 100000000, 10000000000 ],
         slide: function( event, ui ) {
             $( "#min-range" ).html(numberWithCommas(ui.values[ 0 ]) );
-            $( "#max-range" ).html(numberWithCommas(ui.values[ 1 ]) );
+            $( "#max-range" ).html(ui.values[ 1 ] == 10000000000?numberWithCommas(ui.values[ 1 ]) + ' +' : numberWithCommas(ui.values[ 1 ]) );
             // $( "#lowInput" ).value = $( "#min" ).innerHTML.replace(/,/g, '');
             // $( "#highInput" ).value = $( "#max" ).innerHTML.replace(/,/g, '');
         }
@@ -54,7 +54,7 @@ var tiles = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{
 var map = L.map('map', {center: latlng, zoom: 13, layers: [tiles]});
 map.attributionControl.setPrefix('Python Project')
 var markers = L.markerClusterGroup({ chunkedLoading: true });
-var numberRandomHouse = 20;
+const numberRandomHouse = 20;
 
 
 function makePopup(house) {
@@ -63,7 +63,7 @@ function makePopup(house) {
     var url = house['url']
     var img = house['img'];
     var imgStr = '<img src = "' + img +  '" style="width: 100px; height: 100px; object-fit: cover;" ></img>'
-    var imgLink = '<a href = "' + url + '" target="_blank" "> Chi tiết</a>'
+    var imgLink = '<button class="my-btn" role="button"><a href = "' + url + '" target="_blank" " style="text-decoration: none;"> Chi tiết</a></button>'
 
     return '<div class="row"><div class="column1" style="">' + imgStr + '</div><div class="column2" style="">' + title + '<h3>' + numberWithCommas(price) + ' VND</h3>' + imgLink + '</div></div>'
 }
@@ -77,10 +77,12 @@ function makeAdvertise(house) {
     var price = house['price'];
     var url = house['url']
     var img = house['img'];
+    var rooms = house['rooms'];
+    var size = house['size'];
     var imgStr = '<img src = "' + img +  '" style="width: 100%; height: 150px; object-fit: cover; border-radius: 5px;" ></img>'
-    var imgLink = '<a href = "' + url + '" target="_blank" "> Chi tiết</a>'
+    var imgLink = '<div><button class="my-btn" role="button"><a href = "' + url + '" target="_blank" " style="text-decoration: none;"> Chi tiết</a></button></div>'
 
-    return imgStr + '<div style="margin: 10px;">' + '<h3>' + numberWithCommas(price) + ' VND</h3>' + title + imgLink + '</div>'
+    return imgStr + '<div style="margin: 10px;">' + '<div style="min-height: 100px;"><h3>' + numberWithCommas(price) + ' VND</h3>' + '<p style="font-size: 0.8em; color: #7c7c7c; margin-top: 10px;">' + title + '</p></div>' + '<span style="color: #7c7c7c;margin-right: 25px;"><img width="20px" height="20px" style="margin-bottom: -3px; margin-right: 5px; color: #7c7c7c;" src="./static/maps/assets/images/door.png"></img><span style="font-size: 0.8em;">Phòng: ' + rooms + '</span></span>' + '<span style="color: #7c7c7c;"><img width="20px" height="20px" style="margin-bottom: -3px; margin-right: 5px; color: #7c7c7c;" src="./static/maps/assets/images/square.png"></img><span style="font-size: 0.8em;">Diện tích: ' + size + ' m<sup>2</sup></span></span>' + imgLink + '</div>'
 }
 
 function getRandomArrayElements(arr, count) {
@@ -135,7 +137,7 @@ async function caller() {
 
     document.getElementById("house-container").innerHTML = inner;
 
-    console.log("Done in ", performance.now() - startTime, " ms")
+    console.log("Done in ", performance.now() - startTime, " ms");
 }
 
 caller();
@@ -150,17 +152,25 @@ async function resetLayer() {
     var minPrice = document.getElementById('min-range').innerHTML.split('.').join("").replace(/,/g, '');
     var maxPrice = document.getElementById('max-range').innerHTML.split('.').join("").replace(/,/g, '');
 
+    if (maxPrice == 10000000000) {
+        maxPrice = 1000000000000000;
+    }
+
     var optionDistrict = '';
     optionDistrict = selectDistrict.value;
 
     const houses = await this.getJSON(optionDistrict, minPrice, maxPrice); 
 
-    if (houses >= numberRandomHouse) {
-        var agents = getRandomArrayElements(houses, numberRandomHouse);
+    var agents = [];
+
+    if (houses.length > numberRandomHouse) {
+        agents = getRandomArrayElements(houses, numberRandomHouse);
     }
     else {
-        var agents = houses;
+        agents = houses;
     }
+
+    console.log(agents);
     var inner = "";
 
     for(var i = 0; i < agents.length; i++) {

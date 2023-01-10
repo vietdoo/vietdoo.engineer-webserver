@@ -18,7 +18,6 @@ html {
     position: fixed;
     top: 0;
     background-color: #fff;
-    border-bottom: 1px solid #888;
 }
 
 #navbar {
@@ -76,11 +75,14 @@ html {
 }
 
 #map {
-	width: 60%;
+    margin: 20px;
+    margin-top: 20px;
+	width: calc(60% - 40px);
     position: fixed;
-    bottom: 0;
-    left: 0;
+    bottom: 0px;
+    left: 0px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    border-radius: 10px;
 }
 
 #sidebar {
@@ -208,7 +210,7 @@ html {
     top: -1px;
   }
   .ui-slider-horizontal .ui-slider-handle {
-    top: -10px;
+    /* top: -10px; */
     cursor: pointer;
   }
   .ui-slider-handle {
@@ -268,10 +270,55 @@ html {
     margin-top: 10px;
   }
 
+  /* 
+  Button
+  */
+
+/* CSS */
+.my-btn {
+  background-color: #ffffff;
+  border: 2px solid #422800;
+  border-radius: 30px;
+  box-shadow: #422800 4px 4px 0 0;
+  color: #422800;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 13px;
+  padding: 0;
+  margin-top: 20px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  cursor: pointer;
+}
+
+.my-btn a {
+    color:rgb(0, 0, 0);
+}
+
+.my-btn:hover {
+  background-color: rgb(240, 236, 236);
+}
+
+.my-btn:active {
+  box-shadow: #422800 2px 2px 0 0;
+  transform: translate(2px, 2px);
+}
+
+@media (min-width: 768px) {
+  .my-btn {
+    min-width: 50px;
+    padding: 0 25px;
+  }
+}
+
   @media (max-width: 1000px) {
     .house {
         width: 95%;
-        height: 270px;
+        height: 350px;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; 
         border-radius: 5px;
     }
@@ -294,7 +341,7 @@ html {
         height: 15%;
     }
     #map {
-        height: 85%;
+        height: calc(85% - 40px);
     }
     #sidebar {
         margin-top: 15vh;
@@ -312,7 +359,7 @@ html {
         height: 25vh;
     }
     #map {
-        height: 75vh;
+        height: calc(75vh - 20px);
     }
     #sidebar {
         margin-top: 25vh;
@@ -339,7 +386,7 @@ html {
         height: 32vh;
     }
     #map {
-        height: 68vh;
+        height: calc(68vh - 20px);
     }
     #sidebar {
         margin-top: 32vh;
@@ -365,7 +412,7 @@ html {
   @media (min-width: 1001px) {
     .house {
         width: 45%;
-        height: 270px; 
+        height: 350px; 
         float: left; 
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; 
         border-radius: 5px;
@@ -386,12 +433,12 @@ html {
         margin: 0 20px;
     }
     #header {
-        height: 15%;
+        height: 14%;
     }
     #map {
-        height: 85%;
+        height: calc(86% - 20px);
     }
     #sidebar {
-        margin-top: 15vh;
+        margin-top: 14vh;
     }
   }
