@@ -27,6 +27,12 @@ chotot_lite = mydb["chotot_lite_fixed"]
 def home():
   return render_template('index.html')
 
+@app.route("/", subdomain="test")
+def static_index():
+    """Flask supports static subdomains
+    This is available at static.your-domain.tld"""
+    return "static.your-domain.tld"
+
 @app.route('/upload', methods=['POST'])
 def upload():
     file = request.files['image']
