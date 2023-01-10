@@ -42,13 +42,14 @@ $(function() {
 
 // slider-end
 
-var tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 18,
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Points &copy 2012 LINZ'
-    }),
+var tiles = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png', {
+	maxZoom: 20,
+	attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
+}),
     latlng = L.latLng(10.773081, 106.6829); 
 
 var map = L.map('map', {center: latlng, zoom: 13, layers: [tiles]});
+map.attributionControl.setPrefix('Python Project')
 var markers = L.markerClusterGroup({ chunkedLoading: true });
 var numberRandomHouse = 20;
 
@@ -59,9 +60,13 @@ function makePopup(house) {
     var url = house['url']
     var img = house['img'];
     var imgStr = '<img src = "' + img +  '" style="width: 100px; height: 100px; object-fit: cover;" ></img>'
-    var imgLink = '<a href = "' + url + '">Chi tiết</a>'
+    var imgLink = '<a href = "' + url + '" target="_blank" "> Chi tiết</a>'
 
-    return '<div class="row"><div class="column1" style="">' + imgStr + '</div><div class="column2" style="">' + title + '<h2>' + price + '</h2>' + imgLink + '</div></div>'
+    return '<div class="row"><div class="column1" style="">' + imgStr + '</div><div class="column2" style="">' + title + '<h3>' + numberWithCommas(price) + ' VND</h3>' + imgLink + '</div></div>'
+}
+
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
 function makeAdvertise(house) {
@@ -70,9 +75,9 @@ function makeAdvertise(house) {
     var url = house['url']
     var img = house['img'];
     var imgStr = '<img src = "' + img +  '" style="width: 100%; height: 150px; object-fit: cover; border-radius: 5px;" ></img>'
-    var imgLink = '<a href = "' + url + '">Chi tiết</a>'
+    var imgLink = '<a href = "' + url + '" target="_blank" "> Chi tiết</a>'
 
-    return imgStr + '<div style="margin: 10px;">' + title + '<h4>' + price + '</h4>' + imgLink + '</div>'
+    return imgStr + '<div style="margin: 10px;">' + '<h3>' + numberWithCommas(price) + ' VND</h3>' + title + imgLink + '</div>'
 }
 
 function getRandomArrayElements(arr, count) {
@@ -99,10 +104,10 @@ async function getJSON(dist, low, high) {
 
 async function caller() {
     var startTime = performance.now()
-    const houses = await this.getJSON('Quận 5','','');  
+    const houses = await this.getJSON('Quận 1','','');  
 
     var quantityString = "";
-    quantityString = 'Số lượng: ' + houses.length;
+    quantityString = '<h2>' + houses.length + '</h2>  Ngôi nhà được tìm thấy';
     document.getElementById("quantity").innerHTML = quantityString;
 
     console.log("Successfully request: ", houses.length, " houses in ", houses[0]['dist']);
@@ -163,7 +168,7 @@ async function resetLayer() {
     document.getElementById("house-container").innerHTML = inner;
 
     var quantityString = "";
-    quantityString = 'Số lượng: ' + houses.length;
+    quantityString = houses.length + ' căn nhà được tìm thấy';
 
     document.getElementById("quantity").innerHTML = quantityString;
 
