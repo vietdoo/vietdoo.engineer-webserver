@@ -181,7 +181,8 @@ async function resetLayer() {
     document.getElementById("house-container").innerHTML = inner;
 
     var quantityString = "";
-    quantityString = houses.length + ' căn nhà được tìm thấy';
+    quantityString = '<h2>' + houses.length + '</h2>  Ngôi nhà được tìm thấy';
+    document.getElementById("quantity").innerHTML = quantityString;
 
     document.getElementById("quantity").innerHTML = quantityString;
 
