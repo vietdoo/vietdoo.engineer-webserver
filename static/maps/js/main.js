@@ -51,7 +51,7 @@ var tiles = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{
 }),
     latlng = L.latLng(10.773081, 106.6829); 
 
-var map = L.map('map', {center: latlng, zoom: 13, layers: [tiles]});
+var map = L.map('map', {center: latlng, zoom: 14.5, layers: [tiles]});
 map.attributionControl.setPrefix('Python Project')
 var markers = L.markerClusterGroup({ chunkedLoading: true });
 const numberRandomHouse = 20;
