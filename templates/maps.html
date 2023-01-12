@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="../static/maps/leaflet/MarkerCluster.Default.css" />
 	<link rel="stylesheet" href="../static/maps/js/main.js" />
 	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="../static/maps/leaflet/leaflet.markercluster-src.js"></script>
 	<link rel="shortcut icon" type="image/png" href="https://vietdoo.ml/favicon.ico">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,15 +34,13 @@
 						Sell
 					</div> -->
 					<div>
-						<h2 style="margin: 10px; vertical-align: middle;">
-							vietdoo
-						</h2>
+						<button class="header-btn" style="margin: 10px; vertical-align: middle; padding: 0; border: none; background: transparent; cursor: pointer; font-size: 1rem; opacity: 0.7;">
+							<a href="https://vietdoo.engineer/" target="_blank" style="text-decoration: none;">Trang chủ</a>
+						</button>
 					</div>
 				</div>
 				<div class="navbar-item2" style="margin: auto;">
-					<h2 style="color: rgb(0, 106, 255); margin: 10px; vertical-align: middle;">
-						Together we change the world
-					</h2>
+					<img height="40px" src="./static/maps/assets/images/logo.png">
 				</div>
 				<div class="navbar-item">
 					<!-- <div class="nav-select">
@@ -54,9 +53,12 @@
 						Sign in
 					</div> -->
 					<div>
-						<h2 style="margin: 10px; vertical-align: middle; text-align: right;">
-							dangtrinh
-						</h2>
+						<button class="header-btn" style="margin: 10px; vertical-align: middle; text-align: right; padding: 0; border: none; background: transparent; cursor: pointer; font-size: 1rem; opacity: 0.7;">
+							<a href="https://unripe-mango.github.io/" target="_blank" style="text-decoration: none;">Liên hệ</a>
+						</button>
+						<button class="header-btn" style="margin: 10px; vertical-align: middle; text-align: right; padding: 0; border: none; background: transparent; cursor: pointer; font-size: 1rem; opacity: 0.7;">
+							<a href="#" target="_blank" style="text-decoration: none;">Đăng nhập</a>
+						</button>
 					</div>
 				</div>
 			</div>
@@ -120,9 +122,9 @@
 			<div id="map">
 				
 			</div>
-			<div style="width: 60%; float: left;">Map</div>
+			<div class="map-section">Map</div>
 			<div id="sidebar">
-				<div style="margin: 20px;">
+				<div style="margin: 0 20px;">
 					<h2 style="color: rgb(0, 106, 255);">Ho Chi Minh City Real Estate</h2>
 					<div id="quantity"></div>
 				</div>

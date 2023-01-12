@@ -77,18 +77,11 @@ html {
 #map {
     margin: 20px;
     margin-top: 20px;
-	width: calc(60% - 40px);
     position: fixed;
     bottom: 0px;
     left: 0px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
     border-radius: 10px;
-}
-
-#sidebar {
-    width: 40%; 
-	height: 100%;
-    float: left;
 }
 
 #progress {
@@ -286,7 +279,7 @@ html {
   font-weight: 600;
   font-size: 13px;
   padding: 0;
-  margin-top: 20px;
+  margin-top: 10px;
   text-align: center;
   text-decoration: none;
   user-select: none;
@@ -304,8 +297,16 @@ html {
 }
 
 .my-btn:active {
-  box-shadow: #422800 2px 2px 0 0;
-  transform: translate(2px, 2px);
+    box-shadow: #422800 2px 2px 0 0;
+    transform: translate(2px, 2px);
+}
+
+.header-btn a {
+    color:rgb(0, 0, 0);
+}
+
+.header-btn a:hover {
+    color:rgb(0, 106, 255)
 }
 
 @media (min-width: 768px) {
@@ -321,6 +322,20 @@ html {
         height: 350px;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; 
         border-radius: 5px;
+    }
+    #map {
+        width: calc(100% - 280px);
+    }
+    
+    .map-section {
+        width: calc(100% - 240px); 
+        float: left;
+    }
+    #sidebar {
+        width: 240px; 
+        height: 100%;
+        float: left;
+        margin-top: 15vh;
     }
     .district-section {
         width: 15%; 
@@ -342,9 +357,6 @@ html {
     }
     #map {
         height: calc(85% - 40px);
-    }
-    #sidebar {
-        margin-top: 15vh;
     }
   }
 
@@ -417,6 +429,20 @@ html {
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; 
         border-radius: 5px;
     }
+    #map {
+        width: calc(100% - 520px);
+    }
+    
+    .map-section {
+        width: calc(100% - 480px); 
+        float: left;
+    }
+    #sidebar {
+        width: 480px; 
+        height: 100%;
+        float: left;
+        margin-top: 14vh;
+    }
     .district-section {
         width: 15%; 
         float: left;
@@ -437,8 +463,5 @@ html {
     }
     #map {
         height: calc(86% - 20px);
-    }
-    #sidebar {
-        margin-top: 14vh;
     }
   }

@@ -80,9 +80,9 @@ function makeAdvertise(house) {
     var rooms = house['rooms'];
     var size = house['size'];
     var imgStr = '<img src = "' + img +  '" style="width: 100%; height: 150px; object-fit: cover; border-radius: 5px;" ></img>'
-    var imgLink = '<div><button class="my-btn" role="button"><a href = "' + url + '" target="_blank" " style="text-decoration: none;"> Chi tiết</a></button></div>'
+    var imgLink = '<button class="my-btn" role="button"><a href = "' + url + '" target="_blank" " style="text-decoration: none;"> Chi tiết</a></button>'
 
-    return imgStr + '<div style="margin: 10px;">' + '<div style="min-height: 100px;"><h3>' + numberWithCommas(price) + ' VND</h3>' + '<p style="font-size: 0.8em; color: #7c7c7c; margin-top: 10px;">' + title + '</p></div>' + '<span style="color: #7c7c7c;margin-right: 25px;"><img width="20px" height="20px" style="margin-bottom: -3px; margin-right: 5px; color: #7c7c7c;" src="./static/maps/assets/images/door.png"></img><span style="font-size: 0.8em;">Phòng: ' + rooms + '</span></span>' + '<span style="color: #7c7c7c;"><img width="20px" height="20px" style="margin-bottom: -3px; margin-right: 5px; color: #7c7c7c;" src="./static/maps/assets/images/square.png"></img><span style="font-size: 0.8em;">Diện tích: ' + size + ' m<sup>2</sup></span></span>' + imgLink + '</div>'
+    return imgStr + '<div style="margin: 10px;">' + '<div style="min-height: 90px;"><h3>' + numberWithCommas(price) + ' VND</h3>' + '<p style="font-size: 0.8em; color: #7c7c7c; margin-top: 10px;">' + title + '</p></div>' + '<div style="margin-bottom: 5px;"><span style="color: #7c7c7c;margin-right: 10px;"><img width="20px" height="20px" style="margin-bottom: -3px; margin-right: 5px; color: #7c7c7c;" src="./static/maps/assets/images/door.png"></img><span style="font-size: 0.8em; margin-left: 3px;">Phòng: ' + rooms + '</span></span></div>' + '<div><span style="color: #7c7c7c; margin-left: 3px;"><img width="20px" height="20px" style="margin-bottom: -3px; margin-right: 5px; color: #7c7c7c;" src="./static/maps/assets/images/square.png"></img><span style="font-size: 0.8em;">Diện tích: ' + size + ' m<sup>2</sup></span></span></div>' + imgLink + '</div>'
 }
 
 function getRandomArrayElements(arr, count) {
@@ -152,9 +152,13 @@ async function resetLayer() {
     var minPrice = document.getElementById('min-range').innerHTML.split('.').join("").replace(/,/g, '');
     var maxPrice = document.getElementById('max-range').innerHTML.split('.').join("").replace(/,/g, '');
 
-    if (maxPrice == 10000000000) {
+
+    console.log(maxPrice);
+    if (maxPrice == 10000000000 || maxPrice === '10000000000 +') {
         maxPrice = 1000000000000000;
+        console.log("10 tyyyy+++");
     }
+
 
     var optionDistrict = '';
     optionDistrict = selectDistrict.value;
@@ -170,7 +174,6 @@ async function resetLayer() {
         agents = houses;
     }
 
-    console.log(agents);
     var inner = "";
 
     for(var i = 0; i < agents.length; i++) {
