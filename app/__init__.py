@@ -24,8 +24,8 @@ app.config['UPLOAD_FOLDER'] = os.path.basename('uploads')
 from app.detection.controller import home_page as page_module
 app.register_blueprint(page_module)
 
-#from app.rhymes.controller import rhymes_page as rhymes_module
-#app.register_blueprint(rhymes_module)
+from app.rhymes.controller import rhymes_page as rhymes_module
+app.register_blueprint(rhymes_module)
 
 
 from app import maps
