@@ -10,10 +10,10 @@ ROOT = os.getcwd()
 if str(ROOT) not in sys.path:
     sys.path.append(str(ROOT))
 
-from yolov6.core.evaler import Evaler
-from yolov6.utils.events import LOGGER
-from yolov6.utils.general import increment_name
-from yolov6.utils.config import Config
+from app.detection.yolov6.core.evaler import Evaler
+from app.detection.yolov6.utils.events import LOGGER
+from app.detection.yolov6.utils.general import increment_name
+from app.detection.yolov6.utils.config import Config
 
 def boolean_string(s):
     if s not in {'False', 'True'}:

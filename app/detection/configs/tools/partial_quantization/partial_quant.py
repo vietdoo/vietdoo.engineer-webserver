@@ -9,10 +9,10 @@ if str(ROOT) not in sys.path:
 
 sys.path.append('../../')
 
-from yolov6.models.effidehead import Detect
-from yolov6.layers.common import *
-from yolov6.utils.events import LOGGER, load_yaml
-from yolov6.utils.checkpoint import load_checkpoint
+from app.detection.yolov6.models.effidehead import Detect
+from app.detection.yolov6.layers.common import *
+from app.detection.yolov6.utils.events import LOGGER, load_yaml
+from app.detection.yolov6.utils.checkpoint import load_checkpoint
 
 from tools.partial_quantization.eval import EvalerWrapper
 from tools.partial_quantization.utils import get_module, concat_quant_amax_fuse, quant_sensitivity_load

@@ -6,12 +6,12 @@ ROOT = os.getcwd()
 if str(ROOT) not in sys.path:
     sys.path.append(str(ROOT))
 sys.path.append('../../')
-from yolov6.models.effidehead import Detect
-from yolov6.models.yolo import build_model
-from yolov6.layers.common import *
-from yolov6.utils.events import LOGGER, load_yaml
-from yolov6.utils.checkpoint import load_checkpoint, load_state_dict
-from yolov6.utils.config import Config
+from app.detection.yolov6.models.effidehead import Detect
+from app.detection.yolov6.models.yolo import build_model
+from app.detection.yolov6.layers.common import *
+from app.detection.yolov6.utils.events import LOGGER, load_yaml
+from app.detection.yolov6.utils.checkpoint import load_checkpoint, load_state_dict
+from app.detection.yolov6.utils.config import Config
 from tools.partial_quantization.eval import EvalerWrapper
 from tools.partial_quantization.utils import get_module, concat_quant_amax_fuse
 from tools.qat.qat_utils import qat_init_model_manu
@@ -109,7 +109,7 @@ if __name__ == '__main__':
     qat_mAP = yolov6_evaler.eval(model)
     print(qat_mAP)
     if args.end2end:
-        from yolov6.models.end2end import End2End
+        from app.detection.yolov6.models.end2end import End2End
         model = End2End(model, max_obj=args.topk_all, iou_thres=args.iou_thres,score_thres=args.conf_thres,
                         max_wh=args.max_wh, device=device, trt_version=args.trt_version, with_preprocess=args.with_preprocess)
     # ONNX export

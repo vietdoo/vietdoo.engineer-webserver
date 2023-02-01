@@ -1,6 +1,6 @@
 import os
 import torch
-from yolov6.core.evaler import Evaler
+from app.detection.yolov6.core.evaler import Evaler
 
 class EvalerWrapper(object):
     def __init__(self, eval_cfg):
