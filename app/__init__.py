@@ -9,8 +9,16 @@ from flask_cors import CORS, cross_origin
 
 import pymongo
 
-app = Flask(__name__)
+
+os.environ['CUDA_VISIBLE_DEVICES'] = "0"
+app = Flask(__name__, static_folder='static',)
+cors = CORS(app)
 app.config.from_object('config')
+app.config['CORS_HEADERS'] = 'Content-Type'
+app.jinja_env.auto_reload = True
+app.config['TEMPLATES_AUTO_RELOAD'] = True
+app.config['UPLOAD_FOLDER'] = os.path.basename('uploads')
+
 
 
 from app.detection.controller import home_page as page_module
