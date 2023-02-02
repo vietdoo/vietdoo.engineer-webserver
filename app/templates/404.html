@@ -2,36 +2,180 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - 404 Page</title>
+  <title>404 Page</title>
   <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'><link rel="stylesheet" href="./style.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'><link rel="stylesheet" href="../static/404/style.css">
+<link rel="stylesheet" href="../static/style.css">
+	<link rel="stylesheet" href="../static/assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../static/assets/css/all.min.css">
+	<link rel="stylesheet" href="../static/assets/css/font.css">
+	<link rel="stylesheet" href="../static/assets/css/animate.css">
+	<link rel="stylesheet" href="../static/assets/css/magnific-popup.css">
+	<link rel="stylesheet" href="../static/assets/css/swiper.min.css">
+	<link rel="stylesheet" href="../static/assets/css/jquery-jvectormap-2.0.3.css">
+	<link rel="stylesheet" href="../static/assets/css/style.css">
+	<link rel="stylesheet" href="../static/assets/css/scrollbar.css">
 
+  <link rel="shortcut icon" type="image/png" href="static/favicon.ico">
 </head>
 <body>
 <!-- partial:index.partial.html -->
-<div class="hamburger-menu">
-  <button class="burger" data-state="closed">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
+<!-- start side bar -->
+<div class="port_sidebar_wrapper mport_sidebar_wrapper">
+  <div class="port_sidebar_profile">
+    <a href="javascript:;" class="port_sidebar_position active">
+      <div class="profile_circle ">
+        <img src="../static/assets/images/sklogo.png" alt="profile-image" class="img-fluid" />
+      </div>
+    </a>
+  </div>
+  <div class="port_sidebar_nav">
+    <div class="port_navigation index_navigation">
+      <ul class="nav_list">
+        <!--
+        <li data-number="0">
+          <div class="tooltip_box">
+            <a href="javascript:;" class="siderbar_menuicon">
+              <span class="first_micon">
+                <svg class="nav_about_svg" xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink" width="26px" height="26px">
+                  <defs>
+                    <filter id="Filter_0">
+                      <feFlood flood-color="rgb(255, 74, 74)" flood-opacity="1"
+                        result="floodOut" />
+                      <feComposite operator="atop" in="floodOut" in2="SourceGraphic"
+                        result="compOut" />
+                      <feBlend mode="normal" in="compOut" in2="SourceGraphic" />
+                    </filter>
+
+                  </defs>
+                  <g filter="url(#Filter_0)">
+                    <path fill-rule="evenodd" fill="rgb(14, 15, 33)"
+                      d="M21.937,13.863 L4.063,13.863 L4.063,7.776 L21.937,7.776 L21.937,13.863 ZM6.094,11.832 L19.906,11.832 L19.906,9.807 L6.094,9.807 L6.094,11.832 ZM21.937,3.866 L4.063,3.866 L4.063,5.897 L21.937,5.897 L21.937,3.866 ZM21.937,17.767 L12.188,17.767 L12.188,19.799 L21.937,19.799 L21.937,17.767 ZM10.156,21.830 L4.063,21.830 L4.063,15.742 L10.156,15.742 L10.156,21.830 ZM6.094,19.799 L8.125,19.799 L8.125,17.773 L6.094,17.773 L6.094,19.799 ZM22.953,26.000 L3.047,26.000 C1.367,26.000 0.000,24.633 0.000,22.953 L0.000,3.047 C0.000,1.367 1.367,0.000 3.047,0.000 L22.953,0.000 C24.633,0.000 26.000,1.367 26.000,3.047 L26.000,22.953 C26.000,24.633 24.633,26.000 22.953,26.000 L22.953,26.000 ZM3.047,2.031 C2.487,2.031 2.031,2.487 2.031,3.047 L2.031,22.953 C2.031,23.513 2.487,23.969 3.047,23.969 L22.953,23.969 C23.513,23.969 23.969,23.513 23.969,22.953 L23.969,3.047 C23.969,2.487 23.513,2.031 22.953,2.031 L3.047,2.031 Z" />
+                  </g>
+                </svg>
+              </span>
+              <span class="second_micon">
+
+                <svg class="nav_about_svg" xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink" width="26px" height="26px">
+                  <defs>
+                    <filter>
+                      <feFlood flood-color="rgb(255, 74, 74)" flood-opacity="1"
+                        result="floodOut" />
+                      <feComposite operator="atop" in="floodOut" in2="SourceGraphic"
+                        result="compOut" />
+                      <feBlend mode="normal" in="compOut" in2="SourceGraphic" />
+                    </filter>
+
+                  </defs>
+                  <g filter="url(#Filter_0)">
+                    <path fill-rule="evenodd" fill="rgb(14, 15, 33)"
+                      d="M21.937,13.863 L4.063,13.863 L4.063,7.776 L21.937,7.776 L21.937,13.863 ZM6.094,11.832 L19.906,11.832 L19.906,9.807 L6.094,9.807 L6.094,11.832 ZM21.937,3.866 L4.063,3.866 L4.063,5.897 L21.937,5.897 L21.937,3.866 ZM21.937,17.767 L12.188,17.767 L12.188,19.799 L21.937,19.799 L21.937,17.767 ZM10.156,21.830 L4.063,21.830 L4.063,15.742 L10.156,15.742 L10.156,21.830 ZM6.094,19.799 L8.125,19.799 L8.125,17.773 L6.094,17.773 L6.094,19.799 ZM22.953,26.000 L3.047,26.000 C1.367,26.000 0.000,24.633 0.000,22.953 L0.000,3.047 C0.000,1.367 1.367,0.000 3.047,0.000 L22.953,0.000 C24.633,0.000 26.000,1.367 26.000,3.047 L26.000,22.953 C26.000,24.633 24.633,26.000 22.953,26.000 L22.953,26.000 ZM3.047,2.031 C2.487,2.031 2.031,2.487 2.031,3.047 L2.031,22.953 C2.031,23.513 2.487,23.969 3.047,23.969 L22.953,23.969 C23.513,23.969 23.969,23.513 23.969,22.953 L23.969,3.047 C23.969,2.487 23.513,2.031 22.953,2.031 L3.047,2.031 Z" />
+                  </g>
+                </svg>
+              </span>
+            </a>
+            <span class="menu_tooltip">Object Detection</span>
+          </div>
+        </li>
+      -->
+        <li data-number="1" onclick="location.href='https://vietdoo.me'; ">
+          <div class="tooltip_box" >
+            <a href="" class="siderbar_menuicon">
+              <span class="first_micon">
+                <svg class="nav__portfolio_svg" xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink" width="26px" height="25px">
+                  <image x="0px" y="0px" width="26px" height="25px"
+                    xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAZCAMAAAAYAM5SAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABy1BMVEUbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeT///9q9kCWAAAAl3RSTlMAQFNRRAN//v2SDvO5KhkcGiOn/CVLT163vrhxjO4R5u/BxcDrCeiVvV1K+zKh1CxWVFJl9pZ0UKqNbFrt+vf4+fFu58tNTky/9XxqE2bTPS/gOwu19OlzAqRpYhfC6pCUuivKzrHWMEfQem3yxuQ4V4kiX1xbWKzeGHaIQTx+8GshMwEehjouvH2zcJiFNa0bH8yde4EEd8zwsQAAAAFiS0dEmHbRBj4AAAAHdElNRQfjBRAQDhhVNA3LAAABoklEQVQoz3WRazsbQRSAT4LN1DUyugnVNq7Fkg1CtemsBNlI0YtbUYJN742gTetatE3VXWja83e7Vhbr4X3mw3nn/XKeGYA0JnOGhjkzC4xwFiQaiDeMJTsnNy+/QMVaaKNFhnQTebujWKXklsliN6TS23fuOsvKyysqnVXV9wypuMZKa0+GOqG+waXfiu7GpmaPrYW23ldp9rQ9wIdNje56AO8jIjBKJcLamSCwdh+RGGUC8XdAZxcf4OWgHAjKvKyeYEDWpu4Q4GO4kh4Edp5664LWM+kj4H/yNC3PXAJ93p+WgcEhGEb6YkSzUWnsZaXjtIxPYBg8k1M4bVJERYm8Anj95q0iisq79yFHDrAP8DGKGjNZYDudMDY7ZwHfPMAn8+f4l6+uCMDCYtwbj9v5JVim4FvRd2qLrn6LTeumJramS2YYcT1Dtw0CUst3/VvFno0f6fFn4heDMFpmNi8/xe8toi4frdmOORVjKahe53aGAHeh0L9nTPvSAXgRQoeJ/FxX8ugCyeNIIvmHwDJewzyMyByXSq0ZSKW4v+5//wG5n3qzco5eOwAAAABJRU5ErkJggg==" />
+                </svg>
+              </span>
+              <span class="second_micon">
+                <svg class="nav__portfolio_svg" xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink" width="26px" height="25px">
+                  <image x="0px" y="0px" width="26px" height="25px"
+                    xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAZCAMAAAAYAM5SAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABy1BMVEUbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeQbyeT///9q9kCWAAAAl3RSTlMAQFNRRAN//v2SDvO5KhkcGiOn/CVLT163vrhxjO4R5u/BxcDrCeiVvV1K+zKh1CxWVFJl9pZ0UKqNbFrt+vf4+fFu58tNTky/9XxqE2bTPS/gOwu19OlzAqRpYhfC6pCUuivKzrHWMEfQem3yxuQ4V4kiX1xbWKzeGHaIQTx+8GshMwEehjouvH2zcJiFNa0bH8yde4EEd8zwsQAAAAFiS0dEmHbRBj4AAAAHdElNRQfjBRAQDhhVNA3LAAABoklEQVQoz3WRazsbQRSAT4LN1DUyugnVNq7Fkg1CtemsBNlI0YtbUYJN742gTetatE3VXWja83e7Vhbr4X3mw3nn/XKeGYA0JnOGhjkzC4xwFiQaiDeMJTsnNy+/QMVaaKNFhnQTebujWKXklsliN6TS23fuOsvKyysqnVXV9wypuMZKa0+GOqG+waXfiu7GpmaPrYW23ldp9rQ9wIdNje56AO8jIjBKJcLamSCwdh+RGGUC8XdAZxcf4OWgHAjKvKyeYEDWpu4Q4GO4kh4Edp5664LWM+kj4H/yNC3PXAJ93p+WgcEhGEb6YkSzUWnsZaXjtIxPYBg8k1M4bVJERYm8Anj95q0iisq79yFHDrAP8DGKGjNZYDudMDY7ZwHfPMAn8+f4l6+uCMDCYtwbj9v5JVim4FvRd2qLrn6LTeumJramS2YYcT1Dtw0CUst3/VvFno0f6fFn4heDMFpmNi8/xe8toi4frdmOORVjKahe53aGAHeh0L9nTPvSAXgRQoeJ/FxX8ugCyeNIIvmHwDJewzyMyByXSq0ZSKW4v+5//wG5n3qzco5eOwAAAABJRU5ErkJggg==" />
+                </svg>
+              </span>
+            </a>
+            <span class="menu_tooltip">Portfolio</span>
+          </div>
+        </li>
+        <!--
+        <li data-number="2">
+          <div class="tooltip_box">
+            <a href="" class="siderbar_menuicon">
+              <span class="first_micon">
+                <svg class="nav_quotes_svg" xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 508.044 508.044">
+                  <g>
+                    <g>
+                      <path d="M0.108,352.536c0,66.794,54.144,120.938,120.937,120.938c66.794,0,120.938-54.144,120.938-120.938
+                          s-54.144-120.937-120.938-120.937c-13.727,0-26.867,2.393-39.168,6.61C109.093,82.118,230.814-18.543,117.979,64.303
+                          C-7.138,156.17-0.026,348.84,0.114,352.371C0.114,352.426,0.108,352.475,0.108,352.536z" />
+                      <path d="M266.169,352.536c0,66.794,54.144,120.938,120.938,120.938s120.938-54.144,120.938-120.938S453.9,231.599,387.106,231.599
+                          c-13.728,0-26.867,2.393-39.168,6.61C375.154,82.118,496.875-18.543,384.04,64.303C258.923,156.17,266.034,348.84,266.175,352.371
+                          C266.175,352.426,266.169,352.475,266.169,352.536z" />
+                    </g>
+                  </g>
+                </svg>
+              </span>
+              <span class="second_micon">
+                <svg class="nav_quotes_svg" xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 508.044 508.044">
+                  <g>
+                    <g>
+                      <path d="M0.108,352.536c0,66.794,54.144,120.938,120.937,120.938c66.794,0,120.938-54.144,120.938-120.938
+                          s-54.144-120.937-120.938-120.937c-13.727,0-26.867,2.393-39.168,6.61C109.093,82.118,230.814-18.543,117.979,64.303
+                          C-7.138,156.17-0.026,348.84,0.114,352.371C0.114,352.426,0.108,352.475,0.108,352.536z" />
+                      <path d="M266.169,352.536c0,66.794,54.144,120.938,120.938,120.938s120.938-54.144,120.938-120.938S453.9,231.599,387.106,231.599
+                          c-13.728,0-26.867,2.393-39.168,6.61C375.154,82.118,496.875-18.543,384.04,64.303C258.923,156.17,266.034,348.84,266.175,352.371
+                          C266.175,352.426,266.169,352.475,266.169,352.536z" />
+                    </g>
+                  </g>
+                </svg>
+              </span>
+            </a>
+            <span class="menu_tooltip">Coming soon</span>
+          </div>
+        </li>
+        -->
+      </ul>
+    </div>
+  </div>
+  <div class="port_sidebar_social">
+    <div class="port__social_box">
+    
+      <ul class="social_list">
+        <li>
+          <a href="https://www.facebook.com/vietdoo" class="siderbar_icon">
+            <span class="first_icon"><i class="fab fa-facebook-f nav_fb"></i></span>
+            <span class="second_icon"><i class="fab fa-facebook-f nav_fb"></i></span>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/vietdoo/" class="siderbar_icon">
+            <span class="first_icon"><i class="fab fa-linkedin-in nav_in"></i></span>
+            <span class="second_icon"><i class="fab fa-linkedin-in nav_in"></i></span>
+          </a>
+        </li>
+        <li>
+          <a href="https://twitter.com/vietdoo" class="siderbar_icon">
+            <span class="first_icon"><i class="fab fa-twitter nav_twit"></i></span>
+            <span class="second_icon"><i class="fab fa-twitter nav_twit"></i></span>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/vietbrown/" class="siderbar_icon">
+            <span class="first_icon"><i class="fab fa-instagram nav_insta"></i></span>
+            <span class="second_icon"><i class="fab fa-instagram nav_insta"></i></span>
+          </a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
 </div>
-<nav data-state="closed">
-  <ul>
-  <li>
-    <a href="#">Home</a>
-  </li>
-  <li>
-    <a href="#">Services</a>
-  </li>
-  <li>
-    <a href="#">About</a>
-  </li>
-  <li>
-    <a href="#">Contact</a>
-  </li>
-  </ul>
-</nav>
 <main>
   <div class="container">
     <div class="row">
@@ -297,13 +441,16 @@
           How you got here is a mystery. But you can click the button below
           to go back to the homepage.
         </p>
-        <button class="btn green">HOME</button>
+        
+	<form>
+ 		 <button class="btn green" formaction="https://vietdoo.engineer/">HOME</button>
+	</form>
       </div>
     </div>
   </div>
 </main>
 <!-- partial -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.1.1/gsap.min.js'></script><script  src="./script.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.1.1/gsap.min.js'></script><script  src="../static/404/script.js"></script>
 
 </body>
 </html>

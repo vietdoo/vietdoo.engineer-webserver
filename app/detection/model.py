@@ -70,7 +70,6 @@ def precess_image(img_c, img_size, stride, half):
 
 model = DetectBackend(f"app/detection/{checkpoint}.pt", device=device)
 stride = model.stride
-print(os.getcwd())
 class_names = load_yaml("app/detection/data/coco.yaml")['names']
 
 if half & (device.type != 'cpu'):
