@@ -27,8 +27,8 @@ app.register_blueprint(page_module)
 from app.api.controller import api_page as api_module
 app.register_blueprint(api_module)
 
-#from app.rhymes.controller import rhymes_page as rhymes_module
-#app.register_blueprint(rhymes_module)
+from app.rhymes.controller import rhymes_page as rhymes_module
+app.register_blueprint(rhymes_module)
 
 from app import maps
 
