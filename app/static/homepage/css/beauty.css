@@ -1,0 +1,113 @@
+:root {
+  --dark-color: hsl(var(--hue), 100%, 9%);
+  --light-color: hsl(var(--hue), 95%, 98%);
+  --base: hsl(var(--hue), 95%, 50%);
+  --complimentary1: hsl(var(--hue-complimentary1), 95%, 50%);
+  --complimentary2: hsl(var(--hue-complimentary2), 95%, 50%);
+
+  --font-family: "Poppins", system-ui;
+
+  --bg-gradient: linear-gradient(
+    to bottom,
+    hsl(var(--hue), 95%, 99%),
+    hsl(var(--hue), 95%, 84%)
+  );
+}
+
+.card:hover {
+ transform:  translateY(-30px);
+}
+
+.card {
+  transition: all .3s; 
+  display: inline-block;
+  position: relative;
+  width: 90%;
+  margin-left:20px;
+  margin-top: 20px;
+  border-radius: 25px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .4), 7px 7px 50px 1px rgba(0, 0, 0, .2), 5px 5px 55px 0px rgba(0, 0, 0, .1);
+}
+
+.card:hover .card-img-top {
+	transition: all .3s; 
+	
+	transform: scale(1.2, 1.2), translateY(-30px);
+}
+
+.card-img-top {
+//	transition: all .3s;  
+//	border-top-right-radius: 22px;
+	//border-top-left-radius: 22px;
+	border-radius: 22px;
+	padding: 5px 5px;  
+
+}
+
+.py-lg-5 {
+	margin-bottom: 20px;
+}
+.row-cols-lg-3 {
+	//height: 500px;
+}
+
+.display-4 {
+    
+    font-family: "Poppins", system-ui;
+    font-size: 4rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    margin-bottom: 2rem;
+}
+
+.dis4viet {
+    background-image: linear-gradient(
+    45deg,
+    #50a5e6cc 10%,
+    #a136d4d6, 
+    pink,
+    black,
+    white
+    );
+    font-size: 8rem;
+	-webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    //-moz-background-clip: text;
+    //-moz-text-fill-color: transparent;
+    transition: all .3s;
+
+}
+
+.dis4viet:hover {
+	cursor: pointer;
+	letter-spacing: .3rem;
+}
+
+.homepage-image {
+	display:none
+}
+
+.navbar-collapse {
+	font-family: "Poppins", system-ui;
+	//font-size: 0px;
+    font-weight: 500;
+    letter-spacing: -0.025em;
+}
+
+.nav-link {
+	transition: transform .2s;
+}
+
+.nav-link:hover {
+	transform: scale(1.1, 1.1);
+	//font-weight: 700;
+	 background-image: linear-gradient(
+    45deg,
+    #94bbdacc 10%,
+    #ba74dcd6, 
+    pink,
+    white
+    );
+    border-radius: 10px;
+}

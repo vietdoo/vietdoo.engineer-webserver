@@ -21,8 +21,11 @@ app.config['UPLOAD_FOLDER'] = os.path.basename('uploads')
 
 
 
-from app.detection.controller import home_page as page_module
+from app.homepage.controller import home_page as page_module
 app.register_blueprint(page_module)
+
+from app.detection.controller import detection_page as detection_module
+app.register_blueprint(detection_module)
 
 from app.api.controller import api_page as api_module
 app.register_blueprint(api_module)
