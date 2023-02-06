@@ -17,9 +17,11 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 app.jinja_env.auto_reload = True
 app.config['TEMPLATES_AUTO_RELOAD'] = True
 app.config['UPLOAD_FOLDER'] = os.path.basename('uploads')
+app.config['SERVER_NAME'] = 'vietdoo.engineer'
 
 
-
+from .admin import admin
+app.register_blueprint(admin, subdomain='admin')
 
 from app.homepage.controller import home_page as page_module
 app.register_blueprint(page_module)
@@ -30,8 +32,8 @@ app.register_blueprint(detection_module)
 from app.api.controller import api_page as api_module
 app.register_blueprint(api_module)
 
-from app.rhymes.controller import rhymes_page as rhymes_module
-app.register_blueprint(rhymes_module)
+#from app.rhymes.controller import rhymes_page as rhymes_module
+#app.register_blueprint(rhymes_module)
 
 from app import maps
 

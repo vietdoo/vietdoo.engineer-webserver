@@ -8,6 +8,6 @@ def home():
   return render_template('homepage/index.html')
 
 
-@home_page.route('/', subdomain ='practice')
-def practice():
-    return "Coding Practice Page"
+@home_page.route('/', subdomain='admin')
+def api_search():
+  return "Coding Practice Page"
