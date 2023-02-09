@@ -5,7 +5,7 @@ import json
 from bson.json_util import dumps
 from bson.json_util import loads
 import urllib.request
-urllib.request.urlretrieve("https://tigerlake.s3.ap-southeast-1.amazonaws.com/mongo.json", filename="mongo.json")
+urllib.request.urlretrieve("https://tigerlake.s3.ap-southeast-1.amazonaws.com/mongo.json", filename = "mongo.json")
 print('Fetch new Json: OK')
 
 #local
