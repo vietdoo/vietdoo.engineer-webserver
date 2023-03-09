@@ -3,6 +3,9 @@
 
 flask
 gunicorn
+flask_cors
+pymongo
+pandas
 torch>=1.8.0 
 torchvision>=0.9.0
 numpy>=1.18.5
