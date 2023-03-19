@@ -11,7 +11,7 @@ async function getAnswer(message) {
             prompt: message 
         })
     };
-
+    //v632
     return fetch('/chatbot/response', settings)
             .then((response)=>response.text())
             .then((responseAnswer)=>{return responseAnswer});
