@@ -8,7 +8,7 @@ chatbot_page = Blueprint('chatbot', __name__, url_prefix='/chatbot')
 
 from flask import Flask, render_template, request, redirect, url_for, send_from_directory
 
-token = os.environ['GPTAPI']
+token = os.getenv('GPTAPI')
 openai.api_key = token
 
 print("token:", token)
