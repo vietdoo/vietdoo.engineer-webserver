@@ -21,11 +21,7 @@ def generate_response(prompt):
         temperature = 0.7
     )
 
-    # response = openai.Completion.create(
-    #     engine="text-davinci-003", prompt=prompt, max_tokens=20, n=1,stop=None,temperature=0.7
-    # )
-    # message = response.choices[0].text.strip()
-    # return message
+    print("waiting response from OPEN AI.")
 
     message = result.choices[0].message['content']
     return message

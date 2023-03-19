@@ -5,111 +5,161 @@
     <title>Bé Bơ Thông Minh - GPT</title>
     <link rel="shortcut icon" type="image/png" href="../static/favicon.ico">
     <style>
+      /* Default styles */
       body {
-        background-color: #f5f5f5;
-        color: #333;
-        font-family: sans-serif;
-      }
+  background-color: #f5f5f5;
+  color: #333;
+  font-family: sans-serif;
+}
 
-      .container {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 20px;
-        background-color: #fff;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        border-radius: 5px;
-        overflow: hidden;
-      }
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  overflow: hidden;
+}
 
-      .chat-box {
-        height: 400px;
-        overflow-y: scroll;
-        padding: 10px;
-        margin-bottom: 10px;
-      }
+.chat-box {
+  height: 400px;
+  overflow-y: scroll;
+  padding: 10px;
+  margin-bottom: 10px;
+}
 
-      .message {
-        margin-bottom: 10px;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        font-size: 16px;
-      }
+.message {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 16px;
+}
 
-      .message.bot {
-        align-items: flex-start;
-      }
+.message.bot {
+  align-items: flex-start;
+}
 
-      .message.me {
-        align-items: flex-end;
-      }
+.message.me {
+  align-items: flex-end;
+}
 
-      .message .name {
-        font-weight: bold;
-        margin-right: 5px;
-      }
+.message .name {
+  font-weight: bold;
+  margin-right: 5px;
+}
 
-      .message .bubble {
-        padding: 10px;
-        border-radius: 20px;
-        background-color: #eee;
-        color: #333;
-      }
+.message .bubble {
+  padding: 10px;
+  border-radius: 20px;
+  background-color: #eee;
+  color: #333;
+}
 
-      .message.me .bubble {
-        background-color: #d9e2e1;
-        color: #333;
-      }
+.message.me .bubble {
+  background-color: #d9e2e1;
+  color: #333;
+}
 
-      .message.bot .bubble {
-        background-color: #87ceeb;
-        color: #fff;
-      }
+.message.bot .bubble {
+  background-color: #87ceeb;
+  color: #fff;
+}
 
-      .input-box {
-        display: flex;
-        align-items: center;
-        margin-top: 10px;
-      }
+.input-box {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
 
-      input[type="text"] {
-        flex: 1;
-        padding: 10px;
-        margin-right: 10px;
-        border-radius: 20px;
-        border: none;
-        font-size: 16px;
-      }
+input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 20px;
+  border: none;
+  font-size: 16px;
+}
 
-      input[type="submit"] {
-        padding: 10px 20px;
-        border-radius: 20px;
-        border: none;
-        background-color: #87ceeb;
-        color: #fff;
-        font-size: 16px;
-        cursor: pointer;
-        transition: background-color 0.2s ease;
-      }
+input[type="submit"] {
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  background-color: #87ceeb;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
 
-      input[type="submit"]:hover {
-        background-color: #6ca3a7;
-      }
+input[type="submit"]:hover {
+  background-color: #6ca3a7;
+}
 
-      ::-webkit-scrollbar {
-        width: 10px;
-      }
+::-webkit-scrollbar {
+  width: 10px;
+}
 
-      ::-webkit-scrollbar-track {
-        background-color: #f5f5f5;
-      }
+::-webkit-scrollbar-track {
+  background-color: #f5f5f5;
+}
 
-      ::-webkit-scrollbar-thumb {
-        background-color: #c1c1c1;
-      }
-      .img-fluid {
-        display: none;
-      }
+::-webkit-scrollbar-thumb {
+  background-color: #c1c1c1;
+}
+
+.img-fluid {
+  display: none;
+}
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-device-pixel-ratio: 3) {
+    /* Điều chỉnh kích thước các phần tử trên trang web ở đây */
+    .container {
+      max-width: 100%;
+      padding: 10px;
+    }
+    .chat-box {
+      height: 300px;
+      margin-bottom: 20px;
+    }
+    .input-box {
+      margin-top: 20px;
+    }
+}
+/* Media queries for iPhone 11 Pro */
+@media only screen 
+  and (max-device-width: 414px) 
+  and (max-device-height: 896px) 
+  and (-webkit-device-pixel-ratio: 3) {
+
+  /* Increase font size for better readability */
+  body {
+    font-size: 18px;
+  }
+
+  input[type="text"] {
+    font-size: 18px;
+  }
+
+  input[type="submit"] {
+    font-size: 18px;
+    padding: 12px 24px;
+  }
+  
+  /* Adjust chat box height for better visibility */
+  .chat-box {
+    height: 350px;
+  }
+
+  /* Adjust margin for the input box */
+  .input-box {
+    margin-top: 20px;
+  }
+
+}
     </style>
   </head>
   <body>

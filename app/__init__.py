@@ -30,8 +30,7 @@ app.register_blueprint(detection_module)
 from app.api.controller import api_page as api_module
 app.register_blueprint(api_module)
 
-print(socket.gethostbyname(socket.gethostname()))
-if socket.gethostbyname(socket.gethostname()) in ('127.0.1.1', 'localhost', '127.0.0.1'):
+if socket.gethostname() in ('TheMaster'):
     print("LOCAL")
 else:
     print("ONLINE")
