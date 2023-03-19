@@ -107,9 +107,15 @@
       ::-webkit-scrollbar-thumb {
         background-color: #c1c1c1;
       }
+      .img-fluid {
+        display: none;
+      }
     </style>
   </head>
   <body>
+    <div class="homepage-image">
+      <img src="../static/chatbot/img/home.jpg" class="img-fluid">
+    </div>
     <div class="container">
       <div class="chat-box" id="chat-box"></div>
       <form onsubmit="sendMessage(); return false;">
