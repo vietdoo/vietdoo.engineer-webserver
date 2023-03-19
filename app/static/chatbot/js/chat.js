@@ -12,7 +12,7 @@ async function getAnswer(message) {
         })
     };
 
-    return fetch('http://localhost:5000/chatbot/response', settings)
+    return fetch('/chatbot/response', settings)
             .then((response)=>response.text())
             .then((responseAnswer)=>{return responseAnswer});
 }
