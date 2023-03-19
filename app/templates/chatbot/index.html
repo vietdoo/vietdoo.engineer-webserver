@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Bé Dâu Thông Minh</title>
+    <link rel="shortcut icon" type="image/png" href="../static/favicon.ico">
+    <style>
+      body {
+        background-color: #f5f5f5;
+        color: #333;
+        font-family: sans-serif;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        overflow: hidden;
+      }
+
+      .chat-box {
+        height: 400px;
+        overflow-y: scroll;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+
+      .message {
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: 16px;
+      }
+
+      .message.bot {
+        align-items: flex-start;
+      }
+
+      .message.me {
+        align-items: flex-end;
+      }
+
+      .message .name {
+        font-weight: bold;
+        margin-right: 5px;
+      }
+
+      .message .bubble {
+        padding: 10px;
+        border-radius: 20px;
+        background-color: #eee;
+        color: #333;
+      }
+
+      .message.me .bubble {
+        background-color: #d9e2e1;
+        color: #333;
+      }
+
+      .message.bot .bubble {
+        background-color: #87ceeb;
+        color: #fff;
+      }
+
+      .input-box {
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+      }
+
+      input[type="text"] {
+        flex: 1;
+        padding: 10px;
+        margin-right: 10px;
+        border-radius: 20px;
+        border: none;
+        font-size: 16px;
+      }
+
+      input[type="submit"] {
+        padding: 10px 20px;
+        border-radius: 20px;
+        border: none;
+        background-color: #87ceeb;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #6ca3a7;
+      }
+
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background-color: #f5f5f5;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background-color: #c1c1c1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="chat-box" id="chat-box"></div>
+      <form onsubmit="sendMessage(); return false;">
+        <div class="input-box">
+          <input type="text" id="message-input" placeholder="Enter message..." />
+          <input type="submit" value="Send" />
+        </div>
+      </form>
+    </div>
+
+    <script src="../static/chatbot/js/chat.js"></script>
+  </body>
+</html>

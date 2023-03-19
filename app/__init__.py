@@ -7,6 +7,8 @@ import PIL
 from flask import Flask
 from flask_cors import CORS, cross_origin
 
+import openai
+import socket
 import pymongo
 
 
@@ -28,8 +30,16 @@ app.register_blueprint(detection_module)
 from app.api.controller import api_page as api_module
 app.register_blueprint(api_module)
 
-from app.rhymes.controller import rhymes_page as rhymes_module
-app.register_blueprint(rhymes_module)
+print(socket.gethostbyname(socket.gethostname()))
+if socket.gethostbyname(socket.gethostname()) in ('127.0.1.1', 'localhost', '127.0.0.1'):
+    print("LOCAL")
+else:
+    print("ONLINE")
+    from app.rhymes.controller import rhymes_page as rhymes_module
+    app.register_blueprint(rhymes_module)
+
+from app.chatbot.controller import chatbot_page as chatbot_module
+app.register_blueprint(chatbot_module)
 
 from app import maps
 
