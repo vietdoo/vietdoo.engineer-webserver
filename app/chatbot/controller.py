@@ -21,7 +21,7 @@ def generate_response(prompt):
         messages=[
             {"role": "user", "content": prompt}
         ],
-        temperature = 0.7
+        temperature = 0.9
     )
 
     print("waiting response from OPEN AI.")
@@ -33,18 +33,27 @@ def generate_response(prompt):
 def home():
     return render_template('chatbot/index.html')
 
+@chatbot_page.route('/dev')
+def homedev():
+    return render_template('chatbot/index.html')
+
 @chatbot_page.route('/text')
 def text():
     return "Chào Fen !"
 
 @chatbot_page.route("/", methods=["POST"])
 def chatbot():
+    
     data = request.get_json()
     prompt = data["prompt"]
+    print(prompt)
     message = generate_response(prompt)
     print(message)
     return message
 
+
+
 @chatbot_page.route('/test')
 def test():
+    print('testing route: on')
     return generate_response("chào bạn")
