@@ -116,36 +116,33 @@ input[type="submit"]:hover {
   and (min-device-width: 375px) 
   and (max-device-width: 812px) 
   and (-webkit-device-pixel-ratio: 3) {
-    /* Điều chỉnh kích thước các phần tử trên trang web ở đây */
     .container {
       max-width: 100%;
       padding: 10px;
     }
     .chat-box {
-      height: 300px;
+      height: 500px;
       margin-bottom: 20px;
     }
     .input-box {
       margin-top: 20px;
     }
 }
-/* Media queries for iPhone 11 Pro */
+
 @media only screen 
   and (max-device-width: 414px) 
   and (max-device-height: 896px) 
   and (-webkit-device-pixel-ratio: 3) {
-
-  /* Increase font size for better readability */
   body {
-    font-size: 18px;
+    font-size: 28px;
   }
 
   input[type="text"] {
-    font-size: 18px;
+    font-size: 28px;
   }
 
   input[type="submit"] {
-    font-size: 18px;
+    font-size: 28px;
     padding: 12px 24px;
   }
   
@@ -186,54 +183,54 @@ input[type="submit"]:hover {
       responseElement.innerHTML = '<span class="name">Bot🥑:</span><div class="bubble">' + 'Xin chào tôi có thể giúp gì bạn ❤️' + '</div>';
       chatBox.appendChild(responseElement);
 
-async function getAnswer(message) {
-    const settings = {
-        method: 'POST',
-        headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            prompt: message 
-        })
-    };
+      async function getAnswer(message) {
+        const settings = {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                prompt: message 
+            })
+        };
 
-     //v632
-     return fetch('/chatbot/response', settings)
-            .then((response)=>response.text())
-            .then((responseAnswer)=>{return responseAnswer});
-}
+        //v632
+        return fetch('/chatbot/response', settings)
+                .then((response)=>response.text())
+                .then((responseAnswer)=>{return responseAnswer});
+      }
 
 
-async function sendMessage() {
-  let messageInput = document.getElementById('message-input');
-  let message = messageInput.value.trim();
-  messageInput.value = '';
+      async function sendMessage() {
+        let messageInput = document.getElementById('message-input');
+        let message = messageInput.value.trim();
+        messageInput.value = '';
 
-  if (message) {
-    
-    let messageElement = document.createElement('div');
-    messageElement.classList.add('message');
-    messageElement.classList.add('me');
-    messageElement.innerHTML = '<span class="name">Me:</span><div class="bubble">' + message + '</div>';
-    chatBox.appendChild(messageElement);
-    scrollToBottom();
-    const result = await getAnswer(message);
-      
+        if (message) {
+          
+          let messageElement = document.createElement('div');
+          messageElement.classList.add('message');
+          messageElement.classList.add('me');
+          messageElement.innerHTML = '<span class="name">Me:</span><div class="bubble">' + message + '</div>';
+          chatBox.appendChild(messageElement);
+          scrollToBottom();
+          const result = await getAnswer(message);
+            
 
-    let responseElement = document.createElement('div');
-    responseElement.classList.add('message');
-    responseElement.classList.add('bot');
-    responseElement.innerHTML = '<span class="name">Bot🥑:</span><div class="bubble">' + result + '</div>';
-    chatBox.appendChild(responseElement);
+          let responseElement = document.createElement('div');
+          responseElement.classList.add('message');
+          responseElement.classList.add('bot');
+          responseElement.innerHTML = '<span class="name">Bot🥑:</span><div class="bubble">' + result + '</div>';
+          chatBox.appendChild(responseElement);
 
-    scrollToBottom();
-  }
-}
+          scrollToBottom();
+        }
+      }
 
-function scrollToBottom() {
-  chatBox.scrollTop = chatBox.scrollHeight;
-}
+      function scrollToBottom() {
+        chatBox.scrollTop = chatBox.scrollHeight;
+      }
     </script>
   </body>
 </html>
