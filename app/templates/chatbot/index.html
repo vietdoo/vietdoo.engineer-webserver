@@ -169,7 +169,8 @@ input[type="submit"]:hover {
       let responseElement = document.createElement('div');
       responseElement.classList.add('message');
       responseElement.classList.add('bot');
-      responseElement.innerHTML = '<span class="name">Bé Bơ🥑:</span><div class="bubble">' + 'Xin chào Bơ giúp được gì ạ ❤️' + '</div>';
+      responseElement.innerHTML = '<span class="name">Bé Bơ🥑:</span><div class="bubble">' + 'Bơ là đệ tử anh Việt' + '</div>';
+
       
       chatBox.appendChild(responseElement);
 
@@ -179,6 +180,8 @@ input[type="submit"]:hover {
       responseElement.innerHTML = '</span><div class="bubble">' + 'Bơ đang uống ' + item + ' hihi </div>';
       
       chatBox.appendChild(responseElement);
+
+      
      
 
       async function getAnswer(message) {
@@ -197,7 +200,7 @@ input[type="submit"]:hover {
         const response = await fetch('/chatbot/', settings)
         if (!response.ok) {
           
-          return 'Bơ đang bận uống sữa, bạn quay lại sau nhé 😘'
+          return 'Bơ đang bận uống '+ item +', bạn quay lại sau nhé 😘'
         } else
           return response.text();
       }
