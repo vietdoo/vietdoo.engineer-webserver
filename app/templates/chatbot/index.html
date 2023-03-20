@@ -185,7 +185,7 @@ input[type="submit"]:hover {
                 prompt: message 
             })
         };
-        const response = await fetch('http://localhost:5000/chatbot', settings)
+        const response = await fetch('/chatbot', settings)
         if (!response.ok) {
           
           return 'Bơ đang bận uống sữa, bạn quay lại sau nhé 😘'
