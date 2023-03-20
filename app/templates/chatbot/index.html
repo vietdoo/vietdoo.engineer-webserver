@@ -183,8 +183,8 @@ input[type="submit"]:hover {
             })
         };
 
-        //v632
-        return fetch('/chatbot/response', settings)
+        //v716
+        return fetch('/chatbot', settings)
                 .then((response)=>response.text())
                 .then((responseAnswer)=>{return responseAnswer});
       }

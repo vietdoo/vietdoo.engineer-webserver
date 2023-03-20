@@ -37,7 +37,7 @@ def home():
 def text():
     return "Chào Fen !"
 
-@chatbot_page.route("/response", methods=["POST"])
+@chatbot_page.route("/", methods=["POST"])
 def chatbot():
     data = request.get_json()
     prompt = data["prompt"]
@@ -45,3 +45,6 @@ def chatbot():
     print(message)
     return message
 
+@chatbot_page.route('/test')
+def test():
+    return generate_response("chào bạn")
