@@ -177,7 +177,14 @@ input[type="submit"]:hover {
     </div>
 
     <script>
+      
       let chatBox = document.getElementById('chat-box');
+
+      let responseElement = document.createElement('div');
+      responseElement.classList.add('message');
+      responseElement.classList.add('bot');
+      responseElement.innerHTML = '<span class="name">Bot🥑:</span><div class="bubble">' + 'Xin chào tôi có thể giúp gì bạn ❤️' + '</div>';
+      chatBox.appendChild(responseElement);
 
 async function getAnswer(message) {
     const settings = {
@@ -210,14 +217,14 @@ async function sendMessage() {
     messageElement.classList.add('me');
     messageElement.innerHTML = '<span class="name">Me:</span><div class="bubble">' + message + '</div>';
     chatBox.appendChild(messageElement);
-
+    scrollToBottom();
     const result = await getAnswer(message);
       
 
     let responseElement = document.createElement('div');
     responseElement.classList.add('message');
     responseElement.classList.add('bot');
-    responseElement.innerHTML = '<span class="name">Bot:</span><div class="bubble">' + result + '</div>';
+    responseElement.innerHTML = '<span class="name">Bot🥑:</span><div class="bubble">' + result + '</div>';
     chatBox.appendChild(responseElement);
 
     scrollToBottom();

@@ -11,6 +11,7 @@ import openai
 import socket
 import pymongo
 
+os.system('./config.sh')
 
 os.environ['CUDA_VISIBLE_DEVICES'] = "0"
 app = Flask(__name__, static_folder='static',)
