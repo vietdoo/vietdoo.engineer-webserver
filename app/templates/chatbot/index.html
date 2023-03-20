@@ -162,14 +162,24 @@ input[type="submit"]:hover {
     </div>
 
     <script>
-      
+      var items = Array('Sữa🧂', 'Bia🍺', 'Coffee🍵', 'Trà sữa🍷', 'Wey💪', 'Bò húc🍷', 'Sting🍹', 'Sữa đậu nành🍸', 'Milo🧃');
+      var item = items[Math.floor(Math.random()*items.length)];
       let chatBox = document.getElementById('chat-box');
 
       let responseElement = document.createElement('div');
       responseElement.classList.add('message');
       responseElement.classList.add('bot');
       responseElement.innerHTML = '<span class="name">Bé Bơ🥑:</span><div class="bubble">' + 'Xin chào Bơ giúp được gì ạ ❤️' + '</div>';
+      
       chatBox.appendChild(responseElement);
+
+      responseElement = document.createElement('div');
+      responseElement.classList.add('message');
+      responseElement.classList.add('bot');
+      responseElement.innerHTML = '</span><div class="bubble">' + 'Bơ đang uống ' + item + ' hihi </div>';
+      
+      chatBox.appendChild(responseElement);
+     
 
       async function getAnswer(message) {
         const settings = {
