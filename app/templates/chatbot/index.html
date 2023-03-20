@@ -174,19 +174,23 @@ input[type="submit"]:hover {
       async function getAnswer(message) {
         const settings = {
             method: 'POST',
+          
             headers: {
                 Accept: 'application/json',
                 'Content-Type': 'application/json',
             },
+       
+
             body: JSON.stringify({
                 prompt: message 
             })
         };
-
-        //v716
-        return fetch('/chatbot', settings)
-                .then((response)=>response.text())
-                .then((responseAnswer)=>{return responseAnswer});
+        const response = await fetch('http://localhost:5000/chatbot', settings)
+        if (!response.ok) {
+          
+          return 'Bơ đang bận uống sữa, bạn quay lại sau nhé 😘'
+        } else
+          return response.text();
       }
 
 

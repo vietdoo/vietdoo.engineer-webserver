@@ -10,6 +10,7 @@ load_dotenv()
 chatbot_page = Blueprint('chatbot', __name__, url_prefix='/chatbot')
 
 from flask import Flask, render_template, request, redirect, url_for, send_from_directory
+from flask_cors import CORS, cross_origin
 
 token = GPT_TOKEN
 openai.api_key = token
@@ -30,10 +31,12 @@ def generate_response(prompt):
     return message
 
 @chatbot_page.route('/')
+@cross_origin(origin='*')
 def home():
     return render_template('chatbot/index.html')
 
 @chatbot_page.route('/dev')
+@cross_origin(origin='*')
 def homedev():
     return render_template('chatbot/index.html')
 
@@ -41,7 +44,9 @@ def homedev():
 def text():
     return "Chào Fen !"
 
+
 @chatbot_page.route("/", methods=["POST"])
+@cross_origin(origin='localhost',headers=['Content- Type','Authorization'])
 def chatbot():
     
     data = request.get_json()

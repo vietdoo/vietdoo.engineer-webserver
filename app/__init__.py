@@ -15,7 +15,7 @@ os.system('./config.sh')
 
 os.environ['CUDA_VISIBLE_DEVICES'] = "0"
 app = Flask(__name__, static_folder='static',)
-cors = CORS(app)
+CORS(app, support_credentials = True)
 app.config['CORS_HEADERS'] = 'Content-Type'
 app.jinja_env.auto_reload = True
 app.config['TEMPLATES_AUTO_RELOAD'] = True
