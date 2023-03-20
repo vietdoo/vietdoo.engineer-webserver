@@ -3,6 +3,8 @@ from flask import render_template, request, Blueprint, jsonify
 import os
 import openai
 import json
+from dotenv import load_dotenv
+load_dotenv()
 
 chatbot_page = Blueprint('chatbot', __name__, url_prefix='/chatbot')
 
