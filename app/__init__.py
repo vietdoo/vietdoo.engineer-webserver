@@ -15,12 +15,18 @@ os.system('./config.sh')
 
 os.environ['CUDA_VISIBLE_DEVICES'] = "0"
 app = Flask(__name__, static_folder='static',)
-CORS(app, support_credentials = True)
+CORS(app, support_credentials = True, resources={r'/*' : {'origins': ['http://localhost:5000']}})
 app.config['CORS_HEADERS'] = 'Content-Type'
 app.jinja_env.auto_reload = True
 app.config['TEMPLATES_AUTO_RELOAD'] = True
 app.config['UPLOAD_FOLDER'] = os.path.basename('uploads')
 
+@app.after_request
+def after_request(response):
+  response.headers.add('Access-Control-Allow-Origin', '*')
+  response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
+  response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')
+  return response
 
 from app.homepage.controller import home_page as page_module
 app.register_blueprint(page_module)

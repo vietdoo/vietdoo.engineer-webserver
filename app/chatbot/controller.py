@@ -1,5 +1,5 @@
 from app import app
-from flask import render_template, request, Blueprint, jsonify 
+from flask import render_template, request, Blueprint, jsonify , after_this_request
 from config import *
 import os
 import openai
@@ -52,8 +52,8 @@ def chatbot():
     data = request.get_json()
     prompt = data["prompt"]
     print(prompt)
-    #message = generate_response(prompt)
-    message = "Mời bạn quay lại sau nhé, Bơ đang uống sữa🧂"
+    message = generate_response(prompt)
+    #message = "Mời bạn quay lại sau nhé, Bơ đang uống sữa🧂"
     print(message)
     return message
 
