@@ -47,7 +47,8 @@ def chatbot():
     data = request.get_json()
     prompt = data["prompt"]
     print(prompt)
-    message = generate_response(prompt)
+    #message = generate_response(prompt)
+    message = "Mời bạn quay lại sau nhé, Bơ đang uống sữa🧂"
     print(message)
     return message
 
