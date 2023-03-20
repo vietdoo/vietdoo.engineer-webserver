@@ -1,5 +1,6 @@
 from app import app
 from flask import render_template, request, Blueprint, jsonify 
+from config import *
 import os
 import openai
 import json
@@ -10,7 +11,7 @@ chatbot_page = Blueprint('chatbot', __name__, url_prefix='/chatbot')
 
 from flask import Flask, render_template, request, redirect, url_for, send_from_directory
 
-token = os.getenv('GPTAPI')
+token = GPT_TOKEN
 openai.api_key = token
 
 print("token:", token)
