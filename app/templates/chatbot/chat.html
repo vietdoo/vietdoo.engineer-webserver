@@ -159,7 +159,8 @@ input[type="submit"]:hover {
           <input type="submit" value="Gửi" />
         </div>
       </form>
-    </div>
+      
+    
 
     <script>
       
@@ -178,13 +179,13 @@ input[type="submit"]:hover {
                 Accept: 'application/json',
                 'Content-Type': 'application/json',
             },
-
+       
 
             body: JSON.stringify({
                 prompt: message 
             })
         };
-        const response = await fetch('/chatbot/', settings)
+        const response = await fetch('http://localhost:5000/chatbot', settings)
         if (!response.ok) {
           
           return 'Bơ đang bận uống sữa, bạn quay lại sau nhé 😘'

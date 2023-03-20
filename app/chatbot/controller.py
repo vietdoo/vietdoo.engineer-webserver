@@ -30,13 +30,12 @@ def generate_response(prompt):
     message = result.choices[0].message['content']
     return message
 
+
 @chatbot_page.route('/')
-@cross_origin(origin='*')
 def home():
     return render_template('chatbot/index.html')
 
 @chatbot_page.route('/dev')
-@cross_origin(origin='*')
 def homedev():
     return render_template('chatbot/index.html')
 
@@ -45,15 +44,15 @@ def text():
     return "Chào Fen !"
 
 
-@chatbot_page.route("/", methods=["POST"])
-@cross_origin(origin='localhost',headers=['Content- Type','Authorization'])
+@cross_origin()
+@chatbot_page.route("/", methods=['GET', 'POST'])
 def chatbot():
     
     data = request.get_json()
     prompt = data["prompt"]
     print(prompt)
-    message = generate_response(prompt)
-    #message = "Mời bạn quay lại sau nhé, Bơ đang uống sữa🧂"
+    #message = generate_response(prompt)
+    message = "Mời bạn quay lại sau nhé, Bơ đang uống sữa🧂"
     print(message)
     return message
 
