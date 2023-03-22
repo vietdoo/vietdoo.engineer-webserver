@@ -26,8 +26,8 @@ def generate_response(prompt):
     )
 
     print("waiting response from OPEN AI.")
-
-    message = result.choices[0].message['content']
+    print(result)
+    message = result.choices[0].message['content'][3:]
     return message
 
 
