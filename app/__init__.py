@@ -11,6 +11,20 @@ import openai
 import socket
 import pymongo
 
+from config import *
+import mysql.connector
+
+
+
+# Preparing SQL query to INSERT a record into the database.
+conn = mysql.connector.connect(
+   user = MYSQL_USER, password = MYSQL_PASSWORD, host = 'awsmysql.c3iit2fpwhsr.ap-southeast-1.rds.amazonaws.com', database = 'chatbot')
+
+cursor = conn.cursor()
+
+
+
+#conn.close()
 
 os.environ['CUDA_VISIBLE_DEVICES'] = "0"
 app = Flask(__name__, static_folder='static',)

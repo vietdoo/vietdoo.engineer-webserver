@@ -7,13 +7,19 @@ import json
 from dotenv import load_dotenv
 load_dotenv()
 
+import time
+import datetime
+from app import conn
 chatbot_page = Blueprint('chatbot', __name__, url_prefix='/chatbot')
 
 from flask import Flask, render_template, request, redirect, url_for, send_from_directory
 from flask_cors import CORS, cross_origin
+import mysql.connector
 
 token = GPT_TOKEN
 openai.api_key = token
+
+
 
 print("token:", token)
 
@@ -25,10 +31,11 @@ def generate_response(prompt):
         temperature = 0.9
     )
 
-    print("waiting response from OPEN AI.")
-    print(result)
+    #print("waiting response from OPEN AI.")
+    
     message = result.choices[0].message['content']
     message = message.strip('\n')
+    
     return message
 
 
@@ -48,13 +55,36 @@ def text():
 @cross_origin()
 @chatbot_page.route("/", methods=['GET', 'POST'])
 def chatbot():
-    
+    clientIP = request.environ['REMOTE_ADDR']
+    clientPORT = request.environ['REMOTE_PORT']
+    print(f"Client IP: {clientIP}:{clientPORT}")
+    resTime = time.time()
     data = request.get_json()
     prompt = data["prompt"]
-    print(prompt)
+    print(f"Text: {prompt}")
     message = generate_response(prompt)
+    resTime = time.time() - resTime
     #message = "Mời bạn quay lại sau nhé, Bơ đang uống sữa🧂"
-    print(message)
+    print(f"Reponse: {message}")
+    
+    try:
+        cursor = conn.cursor()
+        timestamp = time.strftime('%Y-%m-%d %H:%M:%S')
+        print(timestamp)
+        sql = f"""INSERT INTO 
+                chatLog(id, clientIP, request, response, resTime, code, date) 
+                VALUES(default, '{clientIP}:{clientPORT}', '{prompt}', '{message}', {resTime}, 200, '{timestamp}');
+        """
+        try:
+            cursor.execute(sql)
+            conn.commit()
+
+        except Exception as e:
+            print(e)
+            conn.rollback()
+    except Exception as e:
+        print(e)
+        pass
     return message
 
 
