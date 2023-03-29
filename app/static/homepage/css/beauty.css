@@ -6,7 +6,7 @@
   --complimentary2: hsl(var(--hue-complimentary2), 95%, 50%);
 
   --font-family: "Poppins", system-ui;
-
+  
   --bg-gradient: linear-gradient(
     to bottom,
     hsl(var(--hue), 95%, 99%),
@@ -26,7 +26,7 @@
   margin-left:20px;
   margin-top: 20px;
   border-radius: 25px;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  --font-family: "Cambria, Georgia, serif";
   box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .4), 7px 7px 50px 1px rgba(0, 0, 0, .2), 5px 5px 55px 0px rgba(0, 0, 0, .1);
 }
 
