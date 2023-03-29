@@ -55,9 +55,13 @@ def text():
 @cross_origin()
 @chatbot_page.route("/", methods=['GET', 'POST'])
 def chatbot():
-    clientIP = request.environ['REMOTE_ADDR']
-    clientPORT = request.environ['REMOTE_PORT']
-    print(f"Client IP: {clientIP}:{clientPORT}")
+    if request.headers.getlist("X-Forwarded-For"):
+        clientIP = request.headers.getlist("X-Forwarded-For")[0]
+    else:
+        clientIP = request.remote_addr
+    #clientIP = request.environ['REMOTE_ADDR']
+    #clientPORT = request.environ['REMOTE_PORT']
+    print(f"Client IP: {clientIP}")
     resTime = time.time()
     data = request.get_json()
     prompt = data["prompt"]
@@ -73,7 +77,7 @@ def chatbot():
         print(timestamp)
         sql = f"""INSERT INTO 
                 chatLog(id, clientIP, request, response, resTime, code, date) 
-                VALUES(default, '{clientIP}:{clientPORT}', '{prompt}', '{message}', {resTime}, 200, '{timestamp}');
+                VALUES(default, '{clientIP}', '{prompt}', '{message}', {resTime}, 200, '{timestamp}');
         """
         try:
             cursor.execute(sql)
