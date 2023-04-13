@@ -98,11 +98,11 @@ function getRandomArrayElements(arr, count) {
 // https://vietdoo.engineer/api/v1.0/houses/?dist=Qu%E1%BA%ADn%204&low=1920000000&high=2200000000
 async function getJSON(dist, low, high) {
     if (low !== 0 && high !== 0) {
-        return fetch('https://vietdoo.engineer/api/v1.0/houses/?dist=' + dist + '&low=' + low + '&high=' + high)
+        return fetch('https://server.vietdoo.engineer/api/v1.0/houses/?dist=' + dist + '&low=' + low + '&high=' + high)
             .then((response)=>response.json())
             .then((responseJson)=>{return responseJson});
     }
-    return fetch('https://vietdoo.engineer/api/v1.0/houses/?dist=' + dist)
+    return fetch('https://server.vietdoo.engineer/api/v1.0/houses/?dist=' + dist)
             .then((response)=>response.json())
             .then((responseJson)=>{return responseJson});
 }
