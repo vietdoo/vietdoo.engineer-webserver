@@ -20,7 +20,7 @@ import mysql.connector
 conn = mysql.connector.connect(
    user = MYSQL_USER, password = MYSQL_PASSWORD, host = 'awsmysql.c3iit2fpwhsr.ap-southeast-1.rds.amazonaws.com', database = 'chatbot')
 
-cursor = conn.cursor()
+
 
 
 
