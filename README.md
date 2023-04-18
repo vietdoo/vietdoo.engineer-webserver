@@ -1,4 +1,4 @@
-# Realtime-trending-coin-volumes-Binance
+# Webserver
 A server running on Flask uses Blueprint to manage multiple sites at once.
 ## Technology
 frontend: js. 
