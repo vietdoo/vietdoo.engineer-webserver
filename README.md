@@ -5,7 +5,7 @@ frontend: js.
 backend: Python, Torch, Mongo, Mysql, GPTAPI, Flask.
 
 ## Usage
-Start docker-compose
+Start flask
 ```
 pip install -r requirements.txt
 flask run
